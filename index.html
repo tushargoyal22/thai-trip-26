@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thailand, 18–28 Dec 2026: Bangkok and the Andaman loop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1F4F6; --surface:#FFFFFF; --surface-2:#E7ECF0; --ink:#1B1F3B; --muted:#596079; --line:#D3DAE1;
+  --bkk:#D6246E; --kbv:#0A807E; --ppd:#2460C4; --hkt:#C26F0C; --warn:#B4331B; --warn-bg:#FBE9E4; --ok:#2C7A3F;
+  --bkk-soft:#FBE3EE; --kbv-soft:#DDF2F1; --ppd-soft:#E1EAFA; --hkt-soft:#FBEBD6;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body:"Instrument Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121528; --surface:#1B1F38; --surface-2:#252A48; --ink:#ECEEF8; --muted:#A3A9C4; --line:#33395C;
+    --bkk:#FF5A9C; --kbv:#3CC7C3; --ppd:#74A3FF; --hkt:#F2B544; --warn:#FF8A6E; --warn-bg:#3A2228; --ok:#6CCB82;
+    --bkk-soft:#3A1F33; --kbv-soft:#183836; --ppd-soft:#1D2A4A; --hkt-soft:#3A3020;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121528; --surface:#1B1F38; --surface-2:#252A48; --ink:#ECEEF8; --muted:#A3A9C4; --line:#33395C;
+  --bkk:#FF5A9C; --kbv:#3CC7C3; --ppd:#74A3FF; --hkt:#F2B544; --warn:#FF8A6E; --warn-bg:#3A2228; --ok:#6CCB82;
+  --bkk-soft:#3A1F33; --kbv-soft:#183836; --ppd-soft:#1D2A4A; --hkt-soft:#3A3020;
+  color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+img{max-width:100%}
+a{color:inherit;text-underline-offset:3px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--kbv);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.1;margin:0}
+h2{font-size:clamp(30px,4.6vw,44px);font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+h3{font-size:21px;font-weight:600}
+p{margin:0 0 12px}
+.lede{color:var(--muted);max-width:64ch;margin-bottom:28px}
+section{padding:64px 0 24px}
+
+/* Hero */
+header.hero{padding:44px 0 30px}
+.kicker{color:var(--muted);font-size:15px;margin-bottom:14px}
+.hero h1{font-size:clamp(42px,8.4vw,100px);font-weight:800;letter-spacing:-.035em;line-height:.92}
+.hero h1 span{display:block}
+.hero h1 .c1{color:var(--bkk)} .hero h1 .c2{color:var(--kbv)} .hero h1 .c3{color:var(--ppd)} .hero h1 .c4{color:var(--hkt)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin:26px 0 30px;color:var(--muted);font-size:15px}
+.hero-meta b{color:var(--ink);font-weight:600}
+.ribbon-label{font-size:14px;color:var(--muted);margin-bottom:8px}
+.ribbon{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:4px}
+.night{border:0;cursor:pointer;padding:10px 4px 9px;border-radius:6px;text-align:center;color:#fff;font-family:var(--display)}
+.night .d{font-size:clamp(18px,3.4vw,30px);font-weight:800;display:block;line-height:1}
+.night .w{font-size:11px;opacity:.9;display:block;margin-top:4px;font-family:var(--body)}
+.night.bkk{background:var(--bkk)} .night.kbv{background:var(--kbv)} .night.ppd{background:var(--ppd)} .night.hkt{background:var(--hkt)}
+.night.home{background:var(--surface-2);color:var(--ink)}
+.night[aria-pressed="true"]{box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--ink)}
+.legs{display:grid;grid-template-columns:3fr 3fr 2fr 2fr 1fr;gap:4px;margin-top:8px;font-size:13px;color:var(--muted)}
+.legs div{border-top:2px solid currentColor;padding-top:4px}
+.legs .l1{color:var(--bkk)} .legs .l2{color:var(--kbv)} .legs .l3{color:var(--ppd)} .legs .l4{color:var(--hkt)} .legs .l5{color:var(--muted)}
+
+.why-mon{background:var(--surface);border-radius:14px;padding:20px 22px;margin:0 0 30px;border-left:6px solid var(--hkt)}
+.why-mon h3{font-size:22px;font-weight:800;margin-bottom:12px}
+.wm-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.wm-grid h4{font-size:16px;font-weight:600;margin-bottom:4px}
+.wm-grid p{font-size:15px;color:var(--muted);margin:0}
+@media (max-width:820px){.wm-grid{grid-template-columns:1fr}}
+
+/* Nav */
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:8px;padding-bottom:8px}
+nav.tabs a{flex:none;text-decoration:none;padding:8px 12px;border-radius:999px;font-size:15px;font-weight:500;color:var(--muted)}
+nav.tabs a:hover{color:var(--ink);background:var(--surface-2)}
+.theme-btn{margin-left:auto;flex:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-size:14px;cursor:pointer}
+
+/* Itinerary */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;align-items:center}
+.filters .lbl{font-size:14px;color:var(--muted);margin-right:4px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 13px;font-size:14px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.day-pick{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:14px}
+.day-pick button{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 12px;cursor:pointer;text-align:left;font-size:14px;line-height:1.25}
+.day-pick button b{display:block;font-family:var(--display);font-size:17px}
+.day-pick button[aria-pressed="true"]{border-color:var(--city);box-shadow:inset 0 -4px 0 var(--city)}
+.day-card{background:var(--surface);border-radius:14px;border-left:8px solid var(--city);padding:26px 26px 18px}
+.day-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:baseline;margin-bottom:6px}
+.day-head h3{font-size:clamp(24px,3.4vw,32px);font-weight:800}
+.city-tag{font-size:14px;font-weight:600;color:var(--city);background:var(--city-soft);padding:3px 10px;border-radius:999px}
+.day-sub{color:var(--muted);margin-bottom:18px}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:64px 1fr;gap:14px;padding:12px 0;border-top:1px solid var(--line);transition:opacity .2s}
+.tl li.dim{opacity:.28}
+.tl time{font-family:var(--display);font-weight:600;font-size:17px;color:var(--city)}
+.tl .what{font-weight:600}
+.tl .why{color:var(--muted);font-size:15px;margin-top:2px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.tag{font-size:12px;padding:2px 8px;border-radius:999px;background:var(--surface-2);color:var(--muted)}
+.slack{margin-top:14px;padding:14px 16px;border-radius:10px;background:var(--city-soft);font-size:15px}
+.slack b{font-weight:600}
+.day-nav{display:flex;justify-content:space-between;margin-top:14px}
+.day-nav button{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 14px;cursor:pointer;font-size:15px}
+.day-nav button:disabled{opacity:.35;cursor:default}
+
+.verify{display:inline-block;font-size:12px;font-weight:600;color:var(--warn);background:var(--warn-bg);border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:2px;white-space:nowrap}
+
+/* Route */
+.loop{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:8px 0 26px;background:var(--surface);border-radius:14px;overflow:hidden}
+.stop{padding:18px 16px;border-right:1px solid var(--line);position:relative}
+.stop:last-child{border-right:0}
+.stop .n{font-family:var(--display);font-weight:800;font-size:26px;color:var(--c)}
+.stop .p{font-weight:600;margin-top:2px}
+.stop .m{font-size:14px;color:var(--muted);margin-top:6px}
+.stop .hop{display:inline-block;margin-top:10px;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--surface-2);color:var(--muted)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.why-card{background:var(--surface);border-radius:12px;padding:18px}
+.why-card h3{font-size:18px;margin-bottom:6px}
+.why-card p{font-size:15px;color:var(--muted);margin:0}
+details.past{margin-top:22px}
+.routes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+.route{background:var(--surface-2);border-radius:12px;padding:18px}
+.route h4{font-size:17px;margin-bottom:6px}
+.route p{font-size:15px;color:var(--muted);margin:0}
+.route.chosen{background:var(--surface);outline:2px solid var(--kbv)}
+.route .rec{font-size:13px;font-weight:600;color:var(--kbv);margin-bottom:6px}
+
+/* Map */
+.map-wrap{--sea:#DCEAF1;--land:#FFFFFF}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .map-wrap{--sea:#16203A;--land:#262B4A}}
+:root[data-theme="dark"] .map-wrap{--sea:#16203A;--land:#262B4A}
+.map-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:16px;align-items:start}
+.map-card{background:var(--sea);border-radius:14px;overflow:hidden;position:relative}
+.map-card svg{display:block;width:100%;height:auto}
+.map-main svg{max-height:760px}
+.map-cap{display:inline-block;margin:10px 0 0 12px;font-size:13px;color:var(--muted);background:var(--surface);padding:3px 9px;border-radius:999px}
+.land{fill:var(--land);stroke:var(--line);stroke-width:2;stroke-linejoin:round}
+.inset .land{stroke-width:1}
+.ctry{font-family:var(--body);fill:var(--muted);font-size:24px}
+.inset .ctry{font-size:12px}
+.lbl-main{font-family:var(--display);font-weight:800;font-size:34px;fill:var(--ink)}
+.lbl-sub{font-family:var(--body);font-size:22px;fill:var(--muted)}
+.lbl-in{font-family:var(--body);font-weight:600;font-size:13px;fill:var(--ink)}
+.other{cursor:pointer}
+.other circle{fill:var(--land);stroke:var(--muted);stroke-width:2.5}
+.other text{font-family:var(--body);font-size:24px;fill:var(--muted)}
+.other:hover circle,.other.active circle{stroke:var(--ink);stroke-width:4}
+.pt{cursor:pointer}
+.pt .dot{stroke:var(--land);stroke-width:4}
+.inset .pt .dot{stroke-width:2}
+.pt .ring{fill:none;stroke:var(--ink);stroke-width:3;opacity:0}
+.inset .pt .ring{stroke-width:2}
+.pt:hover .ring{opacity:.35}
+.pt.active .ring{opacity:1}
+.pt .num{font-family:var(--display);font-weight:800;font-size:18px;fill:#fff;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.pt:focus-visible,.other:focus-visible{outline:none}
+.pt:focus-visible .ring,.other:focus-visible circle{opacity:1;stroke:var(--kbv)}
+.r-fly{fill:none;stroke:var(--ink);stroke-width:3;stroke-dasharray:12 10;opacity:.75}
+.r-intl{fill:none;stroke:var(--muted);stroke-width:3;stroke-dasharray:12 10}
+.r-ferry{fill:none;stroke:var(--ppd);stroke-width:4;stroke-linecap:round}
+.r-trip{fill:none;stroke:var(--bkk);stroke-width:4;stroke-dasharray:1 8;stroke-linecap:round}
+.r-road{fill:none;stroke:var(--muted);stroke-width:1.6;stroke-dasharray:1 4;stroke-linecap:round}
+.r-boat{fill:none;stroke:var(--kbv);stroke-width:1.8;stroke-dasharray:4 3}
+.inset .r-ferry{stroke-width:2.4}
+.zoombox{fill:none;stroke:var(--ink);stroke-width:2;stroke-dasharray:6 5;opacity:.6}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted);padding:10px 2px 0}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend svg{width:30px;height:10px}
+.map-detail{background:var(--surface);border-radius:14px;padding:20px 22px;border-left:6px solid var(--c,var(--muted));margin-top:16px}
+.map-detail .md-when{font-size:14px;font-weight:600;color:var(--c,var(--muted));margin-bottom:4px}
+.map-detail h3{font-size:26px;font-weight:800;margin-bottom:8px}
+.map-detail p{color:var(--muted);font-size:15px}
+.map-detail ul{margin:6px 0 12px;padding-left:18px;font-size:15px}
+.map-detail li{margin-bottom:5px}
+.md-btn{border:0;background:var(--ink);color:var(--bg);border-radius:8px;padding:9px 14px;font-size:15px;cursor:pointer}
+.md-hint{font-size:13px;color:var(--muted);margin-top:8px}
+@media (max-width:820px){.map-grid{grid-template-columns:1fr}.map-main svg{max-height:560px}}
+
+/* Tables */
+.scroll-x{overflow-x:auto;border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:15px}
+th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;color:var(--muted);font-weight:600}
+td b{font-family:var(--display);font-size:16px}
+.leg-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.decision{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.opt{background:var(--surface);border-radius:12px;padding:20px 22px;border-top:4px solid var(--line)}
+.opt.pick{border-top-color:var(--hkt)}
+.opt h3{margin-bottom:8px}
+.opt ul{margin:8px 0 0;padding-left:18px}
+.opt li{margin-bottom:6px}
+.good{background:var(--kbv-soft);border-radius:12px;padding:16px 20px;margin-top:18px;font-size:16px}
+.good b{color:var(--kbv)}
+
+/* Stays */
+.city-block{margin-bottom:34px}
+.city-block > h3{font-size:28px;font-weight:800;color:var(--city);margin-bottom:6px}
+.city-block .nights{font-size:15px;color:var(--muted);font-family:var(--body);font-weight:500;margin-left:8px}
+.area{color:var(--muted);max-width:72ch;margin-bottom:14px}
+.hotels{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.hotel{background:var(--surface);border-radius:10px;padding:16px 18px}
+.hotel .name{font-weight:600;font-size:17px}
+.hotel .fit{font-size:13px;color:var(--city);font-weight:600;margin:2px 0 8px}
+.hotel p{font-size:15px;color:var(--muted);margin:0}
+
+.stay-list{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stay{background:var(--surface);border-radius:12px;padding:18px;border-top:5px solid var(--city)}
+.stay h3{font-size:20px;font-weight:800;color:var(--city)}
+.stay .nights{font-size:13px;color:var(--muted);margin:2px 0 8px}
+.stay p{font-size:15px;color:var(--muted);margin:0}
+@media (max-width:820px){.stay-list{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.stay-list{grid-template-columns:1fr}}
+
+/* Checklist */
+.progress{display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.bar{flex:1;min-width:160px;height:10px;border-radius:99px;background:var(--surface-2);overflow:hidden;max-width:420px}
+.bar i{display:block;height:100%;width:0;background:var(--kbv);transition:width .3s}
+.groups{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.group{background:var(--surface);border-radius:12px;padding:18px 18px 8px}
+.group h3{font-size:18px;margin-bottom:4px}
+.group .when{font-size:14px;color:var(--muted);margin-bottom:10px}
+.check{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line);cursor:pointer;font-size:15px}
+.check input{width:18px;height:18px;margin-top:3px;accent-color:var(--kbv);flex:none}
+.check.done span{text-decoration:line-through;color:var(--muted)}
+.check small{display:block;color:var(--muted);font-size:13px}
+.reset{border:0;background:none;color:var(--muted);text-decoration:underline;cursor:pointer;font-size:14px}
+
+/* Tips */
+details.tip{background:var(--surface);border-radius:12px;margin-bottom:10px;padding:0 20px}
+details summary{cursor:pointer;padding:16px 0;font-family:var(--display);font-weight:600;font-size:20px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";font-weight:400;color:var(--muted)}
+details[open] summary::after{content:"–"}
+details .body{padding-bottom:16px;max-width:74ch}
+details ul{padding-left:20px;margin:0 0 10px}
+details li{margin-bottom:8px}
+.conv{display:flex;flex-wrap:wrap;gap:12px;align-items:end;background:var(--surface-2);padding:14px;border-radius:10px;margin:6px 0 12px}
+.conv label{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.conv input{font:inherit;font-size:17px;width:130px;padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+
+/* Honest */
+.verdict{background:var(--ink);color:var(--bg);border-radius:16px;padding:28px 30px}
+.verdict h3{font-size:clamp(24px,3.6vw,34px);font-weight:800;margin-bottom:12px}
+.verdict p{max-width:70ch}
+.tweaks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.tweak{background:var(--surface);border-radius:12px;padding:18px}
+.tweak h3{font-size:18px;margin-bottom:6px}
+.tweak p{font-size:15px;color:var(--muted);margin:0}
+
+.vlist{list-style:none;padding:0;margin:0;background:var(--surface);border-radius:12px}
+.vlist li{padding:14px 18px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:12px;font-size:15px}
+.vlist li:last-child{border-bottom:0}
+.vlist .src{color:var(--muted);font-size:14px;text-align:right}
+footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
+
+@media (max-width:820px){
+  .hotels,.groups,.tweaks,.decision,.why-grid,.routes{grid-template-columns:1fr}
+  .loop{grid-template-columns:1fr}
+  .stop{border-right:0;border-bottom:1px solid var(--line)}
+  .day-card{padding:20px 18px 14px;border-left-width:6px}
+  .tl li{grid-template-columns:52px 1fr;gap:10px}
+  .ribbon .w{display:none}
+  .legs{font-size:11px}
+  .vlist li{grid-template-columns:1fr}.vlist .src{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <p class="kicker">Four friends from Delhi NCR, ten nights, one flight inside Thailand</p>
+  <h1><span class="c1">Bangkok,</span><span class="c2">Krabi,</span><span class="c3">Phi Phi,</span><span class="c4">Phuket.</span></h1>
+  <div class="hero-meta">
+    <div>Fly out <b>Fri 18 Dec 2026</b></div>
+    <div>Fly home from Phuket <b>Mon 28 Dec, 11:00</b></div>
+    <div>Rooms <b>₹4,000–8,000 / night, 2 sharing</b></div>
+    <div>Entry <b>30 days visa-free + TDAC</b></div>
+  </div>
+  <div class="ribbon-label">Tap a date to open that day’s plan</div>
+  <div class="ribbon" id="ribbon"></div>
+  <div class="legs" aria-hidden="true">
+    <div class="l1">Bangkok, 3 nights</div><div class="l2">Ao Nang, 3</div><div class="l3">Phi Phi, 2</div><div class="l4">Phuket, 2</div><div class="l5">Home</div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <div class="wrap">
+    <a href="#map">Map</a>
+    <a href="#route">The route</a>
+    <a href="#itinerary">Day by day</a>
+    <a href="#getting-around">Flights and ferries</a>
+    <a href="#stays">Where to stay</a>
+    <a href="#book">Book now</a>
+    <a href="#tips">Practical tips</a>
+    <a href="#honest">Honest take</a>
+    <a href="#check">Verify list</a>
+    <button class="theme-btn" id="themeBtn" type="button">Dark mode</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="map" class="map-wrap">
+  <h2>The trip on a map</h2>
+  <p class="lede">Tap any numbered stop, or the smaller spots in the zoomed Andaman map, to see dates, what you’ll do there and how you get there. Grey places are not on this trip, and tapping them explains why.</p>
+  <div class="map-grid">
+    <div>
+      <div class="map-card map-main">
+        <span class="map-cap">Thailand, approximate</span>
+        <svg viewBox="0 0 1215 1478" role="img" aria-label="Map of Thailand showing the route from Delhi to Bangkok, a flight to Krabi, ferries to Phi Phi and Phuket, and the flight home">
+          <polygon class="land" points="473,39 498,47 535,61 634,127 623,218 697,272 820,272 956,245 1081,319 1069,403 1181,513 1143,595 857,604 795,632 795,660 783,742 808,797 845,848 671,761 597,750 603,687 547,679 485,724 483,770 461,835 387,955 410,1075 484,1146 559,1257 647,1284 708,1330 733,1368 622,1386 484,1312 412,1231 298,1146 275,1093 313,1009 337,928 410,835 375,762 375,679 299,588 287,522 337,449 299,383 212,300 175,218 212,117 275,99 349,106 409,72"/>
+          <ellipse class="land" cx="280" cy="1200" rx="20" ry="40"/>
+          <line x1="284" y1="1161" x2="296" y2="1146" stroke="var(--muted)" stroke-width="5" stroke-linecap="round"/>
+          <ellipse class="land" cx="485" cy="1047" rx="17" ry="13"/>
+          <text class="ctry" x="80" y="470">Myanmar</text>
+          <text class="ctry" x="760" y="150">Laos</text>
+          <text class="ctry" x="900" y="740">Cambodia</text>
+          <text class="ctry" x="600" y="1440">Malaysia</text>
+          <text class="ctry" x="600" y="893">Gulf of Thailand</text>
+          <text class="ctry" x="60" y="1040">Andaman Sea</text>
+
+          <path class="r-intl" d="M96 118 Q 300 360 532 642"/>
+          <path class="r-intl" d="M272 1190 Q 40 760 84 132"/>
+          <path class="r-trip" d="M547 654 L557 598"/>
+          <path class="r-fly" d="M547 670 Q 590 960 374 1166"/>
+          <path class="r-ferry" d="M359 1173 Q 372 1205 347 1226"/>
+          <path class="r-ferry" d="M345 1226 Q 316 1222 290 1198"/>
+          <rect class="zoombox" x="240" y="1132" width="150" height="122" rx="8"/>
+          <text class="lbl-sub" x="240" y="1284">zoomed at right</text>
+
+          <g class="other" data-place="cri" tabindex="0" role="button" aria-label="Chiang Rai, not on this trip"><circle cx="464" cy="89" r="10"/><text x="482" y="97">Chiang Rai</text></g>
+          <g class="other" data-place="pai" tabindex="0" role="button" aria-label="Pai, not on this trip"><circle cx="292" cy="139" r="10"/><text x="236" y="178">Pai</text></g>
+          <g class="other" data-place="cnx" tabindex="0" role="button" aria-label="Chiang Mai, not on this trip"><circle cx="359" cy="191" r="10"/><text x="377" y="199">Chiang Mai</text></g>
+          <g class="other" data-place="skt" tabindex="0" role="button" aria-label="Sukhothai, not on this trip"><circle cx="462" cy="357" r="10"/><text x="480" y="365">Sukhothai</text></g>
+          <g class="other" data-place="tao" tabindex="0" role="button" aria-label="Koh Tao, not on this trip"><circle cx="465" cy="980" r="8"/><text x="515" y="988">Koh Tao</text></g>
+          <g class="other" data-place="pgn" tabindex="0" role="button" aria-label="Koh Phangan, not on this trip"><circle cx="489" cy="1016" r="8"/><text x="515" y="1024">Koh Phangan</text></g>
+          <g class="other" data-place="usm" tabindex="0" role="button" aria-label="Koh Samui, not on this trip"><circle cx="485" cy="1047" r="9"/><text x="515" y="1060">Koh Samui</text></g>
+
+          <g class="pt" data-place="del" tabindex="0" role="button" aria-label="Delhi, start and end"><circle class="ring" cx="84" cy="112" r="26"/><circle class="dot" cx="84" cy="112" r="18" fill="var(--muted)"/><text class="num" x="84" y="112">✈</text><text class="lbl-main" x="40" y="72">Delhi</text></g>
+          <g class="pt" data-place="ayu" tabindex="0" role="button" aria-label="Ayutthaya, optional"><circle class="ring" cx="557" cy="598" r="20"/><circle class="dot" cx="557" cy="598" r="12" fill="var(--bkk)" opacity=".75"/><text class="lbl-sub" x="578" y="594" style="fill:var(--ink);font-weight:600">Ayutthaya</text><text class="lbl-sub" x="578" y="618">optional</text></g>
+          <g class="pt" data-place="bkk" tabindex="0" role="button" aria-label="Stop 1, Bangkok"><circle class="ring" cx="547" cy="656" r="28"/><circle class="dot" cx="547" cy="656" r="20" fill="var(--bkk)"/><text class="num" x="547" y="656">1</text><text class="lbl-main" x="580" y="668">Bangkok</text></g>
+          <g class="pt" data-place="kbv" tabindex="0" role="button" aria-label="Stop 2, Krabi, staying in Ao Nang"><circle class="ring" cx="362" cy="1166" r="26"/><circle class="dot" cx="362" cy="1166" r="18" fill="var(--kbv)"/><text class="num" x="362" y="1166">2</text><text class="lbl-main" x="392" y="1164">Krabi</text><text class="lbl-sub" x="394" y="1192">Ao Nang</text></g>
+          <g class="pt" data-place="ppd" tabindex="0" role="button" aria-label="Stop 3, Koh Phi Phi"><circle class="ring" cx="347" cy="1230" r="26"/><circle class="dot" cx="347" cy="1230" r="18" fill="var(--ppd)"/><text class="num" x="347" y="1230">3</text><text class="lbl-main" x="378" y="1242">Phi Phi</text></g>
+          <g class="pt" data-place="hkt" tabindex="0" role="button" aria-label="Stop 4, Phuket"><circle class="ring" cx="285" cy="1192" r="26"/><circle class="dot" cx="285" cy="1192" r="18" fill="var(--hkt)"/><text class="num" x="285" y="1192">4</text><text class="lbl-main" x="252" y="1184" text-anchor="end">Phuket</text><text class="lbl-sub" x="252" y="1212" text-anchor="end">island</text></g>
+        </svg>
+      </div>
+      <div class="legend" aria-hidden="true">
+        <span><svg viewBox="0 0 30 10"><line x1="0" y1="5" x2="30" y2="5" class="r-fly" style="stroke-width:2;stroke-dasharray:6 4"/></svg>Flight</span>
+        <span><svg viewBox="0 0 30 10"><line x1="0" y1="5" x2="30" y2="5" class="r-ferry" style="stroke-width:3"/></svg>Ferry</span>
+        <span><svg viewBox="0 0 30 10"><line x1="2" y1="5" x2="28" y2="5" class="r-trip" style="stroke-width:3;stroke-dasharray:1 5"/></svg>Day trip</span>
+        <span><svg viewBox="0 0 30 10"><line x1="0" y1="5" x2="30" y2="5" class="r-boat" style="stroke-width:2"/></svg>Boat tour</span>
+        <span><svg viewBox="0 0 30 10"><line x1="2" y1="5" x2="28" y2="5" class="r-road" style="stroke-width:2"/></svg>Road transfer</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="map-card inset">
+        <span class="map-cap">The Andaman loop, zoomed</span>
+        <svg viewBox="0 0 540 360" role="img" aria-label="Zoomed map of Krabi, Phi Phi and Phuket with tour stops">
+          <polygon class="land" points="30,0 62,0 78,40 98,85 116,135 122,182 114,218 96,244 72,270 48,292 34,282 28,244 22,192 26,140 20,92 24,40"/>
+          <polygon class="land" points="190,0 540,0 540,240 522,186 498,146 472,122 450,108 434,98 418,92 400,84 386,66 366,44 340,26 300,14 250,6"/>
+          <polygon class="land" points="362,286 372,279 385,283 393,292 387,301 378,297 371,307 360,301"/>
+          <polygon class="land" points="366,331 376,327 381,339 375,351 366,346"/>
+          <circle class="land" cx="303" cy="48" r="5"/><circle class="land" cx="314" cy="58" r="4"/><circle class="land" cx="296" cy="60" r="3"/>
+          <circle class="land" cx="440" cy="150" r="4"/><circle class="land" cx="452" cy="160" r="3"/><circle class="land" cx="432" cy="164" r="3"/>
+          <text class="ctry" x="200" y="150">Andaman Sea</text>
+          <text class="ctry" x="490" y="132" style="font-weight:600">Krabi</text>
+          <text class="ctry" x="60" y="122" text-anchor="middle" style="font-weight:600">Phuket</text>
+          <text class="ctry" x="60" y="137" text-anchor="middle">(island)</text>
+          <text class="ctry" x="70" y="12">↑ road bridge to mainland</text>
+
+          <path class="r-road" d="M526 36 Q 470 62 408 88"/>
+          <path class="r-boat" d="M408 88 Q 420 90 425 101"/>
+          <path class="r-boat" d="M404 86 Q 350 36 312 50 Q 350 82 404 90"/>
+          <path class="r-boat" d="M412 94 Q 460 130 446 162"/>
+          <path class="r-ferry" d="M406 94 Q 420 200 378 284"/>
+          <path class="r-boat" d="M376 304 Q 400 322 376 336 Q 356 322 370 306"/>
+          <path class="r-ferry" d="M362 296 Q 240 280 112 212"/>
+          <path class="r-road" d="M106 212 Q 70 228 40 238"/>
+          <path class="r-road" d="M36 236 Q 64 130 44 32"/>
+          <path class="r-intl" d="M42 28 L 8 6" style="stroke-width:2;stroke-dasharray:5 4"/>
+          <text class="ctry" x="200" y="262" style="fill:var(--ppd);font-weight:600">ferry ~1.5–2h</text>
+          <text class="ctry" x="424" y="200" style="fill:var(--ppd);font-weight:600">ferry ~2h</text>
+
+          <g class="pt" data-place="kbvair" tabindex="0" role="button" aria-label="Krabi airport"><circle class="ring" cx="526" cy="36" r="11"/><circle class="dot" cx="526" cy="36" r="6" fill="var(--kbv)"/><text class="lbl-in" x="516" y="22" text-anchor="end">Krabi airport</text></g>
+          <g class="pt" data-place="kbv" tabindex="0" role="button" aria-label="Ao Nang"><circle class="ring" cx="408" cy="88" r="13"/><circle class="dot" cx="408" cy="88" r="8" fill="var(--kbv)"/><text class="lbl-in" x="396" y="110" text-anchor="end">Ao Nang (base)</text></g>
+          <g class="pt" data-place="railay" tabindex="0" role="button" aria-label="Railay"><circle class="ring" cx="425" cy="101" r="11"/><circle class="dot" cx="425" cy="101" r="6" fill="var(--kbv)"/><text class="lbl-in" x="436" y="104">Railay</text></g>
+          <g class="pt" data-place="hong" tabindex="0" role="button" aria-label="Hong Islands"><circle class="ring" cx="309" cy="52" r="11"/><circle class="dot" cx="309" cy="52" r="6" fill="var(--kbv)"/><text class="lbl-in" x="309" y="30" text-anchor="middle">Hong Islands</text></g>
+          <g class="pt" data-place="four" tabindex="0" role="button" aria-label="4 Islands, optional"><circle class="ring" cx="446" cy="162" r="11"/><circle class="dot" cx="446" cy="162" r="6" fill="var(--kbv)" opacity=".6"/><text class="lbl-in" x="458" y="166">4 Islands</text></g>
+          <g class="pt" data-place="ppd" tabindex="0" role="button" aria-label="Phi Phi Don"><circle class="ring" cx="376" cy="292" r="13"/><circle class="dot" cx="376" cy="292" r="8" fill="var(--ppd)"/><text class="lbl-in" x="398" y="296">Phi Phi Don</text></g>
+          <g class="pt" data-place="maya" tabindex="0" role="button" aria-label="Maya Bay"><circle class="ring" cx="372" cy="340" r="11"/><circle class="dot" cx="372" cy="340" r="6" fill="var(--ppd)"/><text class="lbl-in" x="388" y="346">Maya Bay</text></g>
+          <g class="pt" data-place="rassada" tabindex="0" role="button" aria-label="Rassada pier"><circle class="ring" cx="108" cy="210" r="10"/><circle class="dot" cx="108" cy="210" r="5" fill="var(--hkt)"/><text class="lbl-in" x="122" y="210">Rassada pier</text></g>
+          <g class="pt" data-place="oldtown" tabindex="0" role="button" aria-label="Phuket Old Town"><circle class="ring" cx="101" cy="190" r="10"/><circle class="dot" cx="101" cy="190" r="5" fill="var(--hkt)"/><text class="lbl-in" x="114" y="188">Old Town</text></g>
+          <g class="pt" data-place="patong" tabindex="0" role="button" aria-label="Patong and Bangla Road"><circle class="ring" cx="33" cy="182" r="10"/><circle class="dot" cx="33" cy="182" r="5" fill="var(--hkt)"/><text class="lbl-in" x="44" y="170">Patong</text></g>
+          <g class="pt" data-place="kata" tabindex="0" role="button" aria-label="Kata, Phuket base"><circle class="ring" cx="36" cy="238" r="13"/><circle class="dot" cx="36" cy="238" r="8" fill="var(--hkt)"/><text class="lbl-in" x="50" y="243">Kata (base)</text></g>
+          <g class="pt" data-place="promthep" tabindex="0" role="button" aria-label="Promthep Cape"><circle class="ring" cx="42" cy="283" r="10"/><circle class="dot" cx="42" cy="283" r="5" fill="var(--hkt)"/><text class="lbl-in" x="54" y="296">Promthep Cape</text></g>
+          <g class="pt" data-place="hktair" tabindex="0" role="button" aria-label="Phuket airport"><circle class="ring" cx="44" cy="30" r="11"/><circle class="dot" cx="44" cy="30" r="6" fill="var(--hkt)"/><text class="lbl-in" x="58" y="34">Phuket airport</text></g>
+        </svg>
+      </div>
+      <div class="map-detail" id="mapDetail" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="route">
+  <h2>The route: city first, then island-hop south</h2>
+  <p class="lede">You fly once inside Thailand, from Bangkok down to Krabi. From there, ferries carry you across the Andaman Sea to Phi Phi and then Phuket, and you fly home from Phuket. No backtracking, and every leg is short.</p>
+
+  <div class="loop">
+    <div class="stop" style="--c:var(--bkk)"><div class="n">3 nights</div><div class="p">Bangkok</div><div class="m">Temples, Chinatown, Chatuchak, rooftops</div><span class="hop">Arrive by air</span></div>
+    <div class="stop" style="--c:var(--kbv)"><div class="n">3 nights</div><div class="p">Ao Nang, Krabi</div><div class="m">Railay, Hong Islands, beach-road bars</div><span class="hop">Flight ~1h20</span></div>
+    <div class="stop" style="--c:var(--ppd)"><div class="n">2 nights</div><div class="p">Koh Phi Phi</div><div class="m">Christmas Eve and Christmas parties, viewpoint, early Maya Bay</div><span class="hop">Ferry ~2h</span></div>
+    <div class="stop" style="--c:var(--hkt)"><div class="n">2 nights</div><div class="p">Phuket (Kata or Karon beach area)</div><div class="m">Old Town, sunset cape, Bangla Road finale</div><span class="hop">Ferry ~1.5–2h</span></div>
+    <div class="stop" style="--c:var(--muted)"><div class="n">Mon 28</div><div class="p">Phuket → Delhi</div><div class="m">11:00 nonstop, booked</div><span class="hop">Flight ~4h30</span></div>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card"><h3>Three beach moods, not one</h3><p>Ao Nang is your easy base with limestone cliffs. Phi Phi is the party island with the famous lagoons. Phuket brings bigger beaches, Old Town and the loudest nightlife.</p></div>
+    <div class="why-card"><h3>The cost: more hotel changes</h3><p>That’s four hotels in ten nights, with a move every 2–3 nights. That’s the limit for a relaxed trip, so don’t add any more destinations. Pack one medium bag each, not big suitcases. Ferries and Phi Phi’s car-free lanes punish heavy luggage.</p></div>
+  </div>
+
+  <div style="margin-top:30px">
+    <h3 style="font-size:26px;font-weight:800;margin-bottom:8px">Why not Koh Samui, Phangan or Tao?</h3>
+    <p style="color:var(--muted);max-width:72ch">These islands are on the Gulf of Thailand side, the opposite coast from Krabi and Phuket. They’re great islands, just not for this trip. Koh Phangan’s Full Moon Party does fall on Thu 24 Dec, but Phi Phi on Christmas Eve is a great party night too, with beach bars, fire shows and DJs. <b style="color:var(--ink);text-decoration:underline;text-underline-offset:3px">That keeps Krabi and Phi Phi, the group’s must-haves, and avoids crossing coasts.</b></p>
+    <div class="why-grid" style="margin-top:16px">
+      <div class="why-card"><h3>Why not pop over for the Full Moon Party on 24 Dec?</h3><p>From Krabi, Phangan is a 5–7 hour bus-and-ferry trip each way. You’d spend 24 Dec getting there, party until dawn, and lose 25 Dec to the trip back. That’s two days gone, plus tired legs for Phi Phi.</p></div>
+      <div class="why-card"><h3>Why not do Phangan first, straight from Bangkok?</h3><p>You’d fly to Samui or Surat Thani and take a ferry to Phangan, then still need a full day to cross to Krabi. Ao Nang would get pushed later, and Christmas on Phi Phi would be lost.</p></div>
+    </div>
+    <p style="color:var(--muted);font-size:15px;margin-top:12px;max-width:72ch">Either way, it adds a fifth stop and at least one full travel day to a 10-night trip, which means dropping Phi Phi or most of Bangkok. Christmas Eve and Christmas on Phi Phi give you two big party nights without crossing the country.</p>
+    <div class="scroll-x" style="margin-top:14px">
+    <table>
+      <thead><tr><th></th><th>Andaman side (your route)</th><th>Gulf side (Samui, Phangan, Tao)</th></tr></thead>
+      <tbody>
+        <tr><td style="font-weight:600;color:var(--muted)">December weather</td><td>Peak dry season. Calm, clear sea for boat trips</td><td>Tail of the rainy season. Usually improving late in the month, but showers are more likely</td></tr>
+        <tr><td style="font-weight:600;color:var(--muted)">Flight home</td><td>Phuket has direct flights to Delhi</td><td>No direct flights to Delhi. You’d connect via Bangkok on your last day</td></tr>
+        <tr><td style="font-weight:600;color:var(--muted)">Getting there</td><td>Many cheap Bangkok → Krabi flights</td><td>Samui flights are mostly Bangkok Airways and pricey. The cheaper route is via Surat Thani by bus and ferry</td></tr>
+        <tr><td style="font-weight:600;color:var(--muted)">Scenery</td><td>Limestone cliffs, Railay, Phi Phi, Maya Bay, lagoons</td><td>Softer palm-lined beaches and jungle interiors</td></tr>
+        <tr><td style="font-weight:600;color:var(--muted)">Parties</td><td>Ao Nang beach bars, Phi Phi beach parties nightly (big on Christmas), Bangla Road in Phuket</td><td>Full Moon Party on 24 Dec, plus a huge New Year’s Eve party (you’ll be home by then)</td></tr>
+        <tr><td style="font-weight:600;color:var(--muted)">Prices that week</td><td>High (Christmas)</td><td>Even higher on Phangan in Full Moon week, when Haad Rin books out first</td></tr>
+        <tr><td style="font-weight:600;color:var(--muted)">Doing both coasts?</td><td colspan="2">Krabi ↔ Samui is a 5–7 hour bus-and-ferry day. In 10 nights you’d lose a full day crossing over, and the trip would turn rushed.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <details class="past">
+    <summary>How we got here: the three options we compared</summary>
+    <div class="body" style="max-width:none">
+      <div class="routes">
+        <div class="route"><h4>Option 1: two flights via Chiang Mai</h4><p>Bangkok 3, Chiang Mai 3, Krabi 4. The broadest trip, but two airport half-days, a scarce Chiang Mai → Krabi flight, and a Monday Krabi return risk.</p></div>
+        <div class="route"><h4>Option 2: sleeper train north</h4><p>Same as Option 1 but with an overnight train to Chiang Mai. A good story to tell, but sleep is hit-and-miss and December berths sell out.</p></div>
+        <div class="route chosen"><div class="rec">Chosen</div><h4>Option 3: skip the north, go deep on the south</h4><p>One flight, more beach and nightlife, now extended into a Krabi → Phi Phi → Phuket loop. You give up the elephants, northern temples and the cooler weather.</p></div>
+      </div>
+    </div>
+  </details>
+</section>
+
+<section id="itinerary">
+  <h2>Day by day</h2>
+  <p class="lede">Every day has one anchor and plenty of space around it. Early starts happen only where they really pay off, like Maya Bay before the day-trip boats. Use the buttons to highlight what the group cares about most.</p>
+  <div class="filters" role="group" aria-label="Highlight by interest">
+    <span class="lbl">Highlight:</span>
+    <button class="chip" data-tag="all" aria-pressed="true">Everything</button>
+    <button class="chip" data-tag="nightlife" aria-pressed="false">Nightlife</button>
+    <button class="chip" data-tag="photo" aria-pressed="false">Photography</button>
+    <button class="chip" data-tag="massage" aria-pressed="false">Massage</button>
+    <button class="chip" data-tag="beach" aria-pressed="false">Beach</button>
+    <button class="chip" data-tag="relax" aria-pressed="false">Downtime</button>
+  </div>
+  <div class="day-pick" id="dayPick"></div>
+  <article class="day-card" id="dayCard" aria-live="polite"></article>
+  <div class="day-nav">
+    <button id="prevDay" type="button">Previous day</button>
+    <button id="nextDay" type="button">Next day</button>
+  </div>
+</section>
+
+<section id="getting-around">
+  <h2>Flights and ferries</h2>
+  <p class="lede">One internal flight and two ferries. Times are taken from recent schedules and seasonal timetables, so confirm each one when booking.</p>
+  <div class="scroll-x">
+  <table>
+    <thead><tr><th>Leg</th><th>Date</th><th>Suggested timing</th><th>Operators</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td><span class="leg-dot" style="background:var(--bkk)"></span><b>Delhi → Bangkok (BKK)</b></td><td>Fri 18 Dec</td><td>Lands ~20:30–21:00</td><td>Booked</td><td>Already done. Allow 45–90 min for immigration in peak week.</td></tr>
+      <tr><td><span class="leg-dot" style="background:var(--kbv)"></span><b>Bangkok → Krabi</b> (flight)</td><td>Mon 21 Dec</td><td>Depart 10:00–11:30, ~1h20</td><td>Thai AirAsia, Thai Lion (from Don Mueang, DMK); Thai Airways, Thai Vietjet (from Suvarnabhumi, BKK)</td><td>Many daily flights. Check which Bangkok airport your ticket uses. Add checked bags on low-cost fares. <span class="verify">Check times</span></td></tr>
+      <tr><td><span class="leg-dot" style="background:var(--ppd)"></span><b>Ao Nang → Phi Phi</b> (ferry)</td><td>Thu 24 Dec</td><td>Morning departure, ~2h</td><td>High-season ferries from Nopparat Thara pier (e.g. Ao Nang Princess, Phi Phi Cruiser), or speedboats</td><td>These are high-season services, typically including hotel pickup. Book 1–2 weeks ahead for Christmas Eve. Pay the small island fee on arrival at Tonsai pier. <span class="verify">Check sailing</span></td></tr>
+      <tr><td><span class="leg-dot" style="background:var(--hkt)"></span><b>Phi Phi → Phuket</b> (ferry)</td><td>Sat 26 Dec</td><td>Late-morning sailing, ~1.5–2h</td><td>Several operators to Rassada pier; many daily sailings</td><td>Rassada is in Phuket Town. Allow ~45–60 min more by road to the Kata/Karon beach area. Book a combined ferry-and-transfer ticket. <span class="verify">Check times</span></td></tr>
+      <tr><td><span class="leg-dot" style="background:var(--muted)"></span><b>Phuket → Delhi</b></td><td>Mon 28 Dec</td><td><b>11:00, booked</b></td><td>Booked</td><td>Lands in Delhi around 14:00–14:30 IST. Leave Kata by 07:30.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="decision">
+    <div class="opt pick">
+      <h3>Booked: Mon 28 Dec, 11:00 from Phuket</h3>
+      <p>Lands in Delhi around 14:00–14:30 IST.</p>
+      <ul>
+        <li>Leave Kata by 07:30. The airport is ~1h north, and in peak week you want to be there by ~08:30.</li>
+        <li>Web check-in the night before, and pre-book the van to the airport.</li>
+        <li>A midday landing avoids most Delhi winter-fog delays, which mostly hit late nights and early mornings.</li>
+      </ul>
+    </div>
+    <div class="opt">
+      <h3>What it means for Sunday night</h3>
+      <p>Bangla Road is still on, but with a cut-off.</p>
+      <ul>
+        <li>Pack before you go out, and aim to be back in Kata by ~01:00.</li>
+        <li>Want a later night? Do Bangla on Sat 26 instead, and keep Sunday for a sunset dinner.</li>
+        <li>Ask the hotel for an early breakfast or a breakfast box.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="stays">
+  <h2>Where to stay</h2>
+  <p class="lede">The area matters more than the hotel. Your budget (₹4,000–8,000 per room) goes a long way in Bangkok, works in Ao Nang and Phuket, and is tight on Phi Phi over Christmas. <span class="verify">Prices change daily</span></p>
+  <div id="staysWrap"></div>
+</section>
+
+<section id="book">
+  <h2>Book now vs. on arrival</h2>
+  <p class="lede">Christmas week is the most crowded stretch of the year in Thailand, and small islands fill first. Tick things off as the group books them. Your progress is saved in this browser.</p>
+  <div class="progress"><div class="bar"><i id="barFill"></i></div><span id="barText">0 of 0 done</span><button class="reset" id="resetChecks" type="button">Clear ticks</button></div>
+  <div class="groups" id="groups"></div>
+</section>
+
+<section id="tips">
+  <h2>Practical tips</h2>
+  <p class="lede">What saves money, time and awkward moments.</p>
+
+  <details class="tip" open>
+    <summary>Money: cash, cards and rates</summary>
+    <div class="body">
+      <div class="conv">
+        <label>₹ per 1 baht<input id="rate" type="number" step="0.01" value="2.65" inputmode="decimal"></label>
+        <label>Thai baht (THB)<input id="thb" type="number" value="1000" inputmode="decimal"></label>
+        <label>Indian rupees (₹)<input id="inr" type="number" inputmode="decimal"></label>
+      </div>
+      <p style="font-size:14px;color:var(--muted)">The default rate is only a placeholder. Check today’s rate and type it in.</p>
+      <ul>
+        <li><b>Cash runs markets, street food, longtails, massages, island bars and tuk-tuks.</b> Cards work in malls, hotels, chains and most restaurants.</li>
+        <li><b>Phi Phi is cash-heavy.</b> Arrive with enough for bars, food and the boat to Maya Bay. There are ATMs, but queues are long at peak times.</li>
+        <li><b>Thai ATMs charge a flat fee (around THB 220) per foreign-card withdrawal</b>, on top of your bank’s fees, so take out larger amounts less often. <span class="verify">Check</span></li>
+        <li>A multi-currency forex card (Niyo, BookMyForex, HDFC/ICICI) usually beats exchanging rupees. If you carry cash, exchange it at SuperRich in Bangkok rather than the airport.</li>
+        <li>When a card machine offers to charge in INR, always choose THB. Paying in INR (dynamic currency conversion) adds a hidden markup.</li>
+        <li>Rough daily spend excluding hotels, at mid-range comfort: about THB 1,500–2,500 per person. Boat tours and big nights push it up. <span class="verify">Estimate</span></li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="tip">
+    <summary>SIM, eSIM and data</summary>
+    <div class="body"><ul>
+      <li>For iPhones and recent Pixels and Galaxys, the easiest option is an eSIM bought before you fly (Airalo, Holafly, or AIS/TrueMove tourist eSIMs). Activate it at the Delhi gate.</li>
+      <li>For a physical SIM, the AIS and TrueMove counters in the arrivals hall sell tourist packs with your passport. Queues are long at 21:00 in peak week.</li>
+      <li>Thai tourist packs include a local number, which helps for Grab, ferry pickups and restaurant bookings. Pure data eSIMs don’t.</li>
+      <li>Coverage is good on Phi Phi Don and Phuket. It drops at sea and on some outer islands.</li>
+    </ul></div>
+  </details>
+
+  <details class="tip">
+    <summary>Getting around: Grab, boats, island logistics</summary>
+    <div class="body"><ul>
+      <li><b>Bangkok:</b> Grab or Bolt (book XL for four people with bags), plus the BTS and MRT. Take the Chao Phraya Express boat to the temples.</li>
+      <li><b>Ao Nang:</b> buy longtail tickets at the official beach counter (fixed prices, departs when about 8 seats fill). Boats thin out after dark.</li>
+      <li><b>Phi Phi:</b> there are no cars. You walk everywhere, and porters with carts meet the ferry. Longtail taxis go to other beaches. Carry light bags.</li>
+      <li><b>Phuket:</b> taxis and tuk-tuks are expensive and don’t use meters. Use Grab or Bolt where they’ll pick up, and agree fixed prices otherwise. Patong to Kata is ~20 min.</li>
+      <li><b>Ferries:</b> book combined tickets with hotel pickup. Arrive 30 min early. Keep valuables and passports on you, not in the luggage pile on deck.</li>
+    </ul></div>
+  </details>
+
+  <details class="tip">
+    <summary>Temple dress code</summary>
+    <div class="body"><ul>
+      <li>Shoulders and knees covered for everyone. The Grand Palace is the strictest: no sleeveless tops, shorts, ripped jeans or see-through fabric. The same rule applies at Ayutthaya’s active temples and Phuket’s Big Buddha.</li>
+      <li>Each of you should pack one pair of light trousers and a T-shirt or shirt. Sarongs are sold outside temples, but queuing for one wastes your morning.</li>
+      <li>Shoes off inside temple halls. Don’t point your feet at Buddha images, and don’t climb on ruins for photos at Ayutthaya.</li>
+      <li>Never joke about or disrespect the King or royal family, even in pictures or memes. It’s a serious criminal offence.</li>
+    </ul></div>
+  </details>
+
+  <details class="tip">
+    <summary>Scams to avoid</summary>
+    <div class="body"><ul>
+      <li><b>“The Grand Palace is closed today.”</b> It isn’t. A friendly stranger then steers you to a cheap tuk-tuk, a “lucky Buddha” and a gem or suit shop. Walk on.</li>
+      <li><b>Jet ski “damage” claims</b>, especially in Patong. If you rent one, photograph every scratch first. Better still, skip them.</li>
+      <li><b>Bar bills and “shows”</b> on Bangla Road and in Patpong. Touts promise free entry, then a huge bill arrives. Check drink prices first and pay each round.</li>
+      <li><b>Taxis that won’t use the meter</b> in Bangkok. Get out and open Grab instead. In Phuket, agree the fare before getting in.</li>
+      <li><b>Unlicensed boats.</b> Book through your hotel, Klook or GetYourGuide, and check for life jackets and a national park fee receipt.</li>
+      <li><b>Drinks and buckets</b> at Phi Phi and Bangla Road parties. Watch your drinks. Buckets are strong. Stick together and agree a meeting point.</li>
+      <li><b>Fire-rope jumping and skipping games</b> on Phi Phi beaches cause real burns every season. Watch, don’t play, after a few buckets.</li>
+    </ul></div>
+  </details>
+
+  <details class="tip">
+    <summary>Laws that catch Indian travellers out</summary>
+    <div class="body"><ul>
+      <li><b>Vapes and e-cigarettes are illegal</b> to bring in, buy or use. Police do street checks in Patong and Bangkok, and fines are steep. Leave them in Delhi.</li>
+      <li><b>Cannabis:</b> despite the shops you’ll see, the rules were tightened in 2025 and recreational buying isn’t legal. Don’t risk it, and never carry any home. <span class="verify">Rules change</span></li>
+      <li>Stores sell alcohol only 11:00–14:00 and 17:00–24:00. Bars and restaurants operate on their own licences.</li>
+      <li>Clubs often check ID, so carry a photo of your passport, or the passport itself on big nights.</li>
+      <li>Scooters: an Indian licence without an International Driving Permit voids most insurance, and police checkpoints fine riders without helmets. On Phuket’s hills, Grab is safer.</li>
+    </ul></div>
+  </details>
+
+  <details class="tip">
+    <summary>Weather, sea and packing</summary>
+    <div class="body"><ul>
+      <li>December is dry season on the Andaman coast: calm, clear water and prime time for boat trips. Expect ~30–32°C everywhere.</li>
+      <li>Pack reef-safe sunscreen, a dry bag for boat days, water shoes or grippy sandals (Railay rocks, the Phi Phi viewpoint), sunglasses with a strap, and a power bank. Power banks go in cabin baggage only.</li>
+      <li>Speedboats bounce. Anyone prone to seasickness should take a tablet 30 min before the Maya Bay and Hong Islands trips.</li>
+    </ul></div>
+  </details>
+
+  <details class="tip">
+    <summary>Entry: TDAC and what immigration may ask</summary>
+    <div class="body"><ul>
+      <li>Fill in the free Thailand Digital Arrival Card at <a href="https://tdac.immigration.go.th" rel="noopener">tdac.immigration.go.th</a> within the 3 days before arrival, so on 16, 17 or 18 Dec. Avoid paid look-alike sites.</li>
+      <li>Officers can ask for your return ticket, hotel bookings and proof of funds (about THB 10,000 per person). Keep PDFs offline on your phone, including your Phuket–Delhi booking.</li>
+      <li>Your passport needs at least 6 months’ validity.</li>
+    </ul></div>
+  </details>
+</section>
+
+<section id="honest">
+  <h2>Honest take</h2>
+  <div class="verdict">
+    <h3>The right trip for this group, and now properly relaxed.</h3>
+    <p>Bangkok gets three fun nights covering the essentials. The south gets seven, with a move only every two or three days, and the trip ends at the airport you fly home from. There’s no day with more than one boat or flight.</p>
+    <p>The one real cost is Phi Phi over Christmas. Two nights there are the priciest and scarcest rooms of the trip, so book them before anything else.</p>
+  </div>
+  <div class="tweaks">
+    <div class="tweak"><h3>Want Ayutthaya back?</h3><p>Do a half-day there on Sunday morning (leave 07:30, back ~13:30) and move Chatuchak to the afternoon. It’s hot and a bit rushed, so only if someone really wants it.</p></div>
+    <div class="tweak"><h3>Phi Phi too pricey?</h3><p>Drop to one night there (24 Dec), take the ferry to Phuket on Christmas Day and give Phuket a third night. You keep the Christmas Eve party.</p></div>
+    <div class="tweak"><h3>Want more party?</h3><p>Stay in Patong instead of Kata. Bangla Road is a walk from your door, but expect noise until 3am and a beach that’s worse for swimming.</p></div>
+  </div>
+</section>
+
+<section id="check">
+  <h2>Verify before you book</h2>
+  <p class="lede">Checked on 10 Nov 2026. These details change, so confirm each one on the official source.</p>
+  <ul class="vlist">
+    <li><span><b>Visa:</b> 30-day visa-free stay for Indian passports, in force since 15 Sep 2026. This has changed several times this year.</span><span class="src">Royal Thai Embassy, New Delhi</span></li>
+    <li><span><b>TDAC</b> is required within the 3 days before arrival, and it’s free.</span><span class="src">tdac.immigration.go.th</span></li>
+    <li><span><b>Phuket → Delhi, Mon 28 Dec, 11:00:</b> watch the airline app for schedule changes, and check your checked-baggage allowance.</span><span class="src">Your airline’s app</span></li>
+    <li><span><b>Bangkok → Krabi, Tue 22 Dec:</b> flight times and which Bangkok airport (DMK or BKK).</span><span class="src">Airline sites</span></li>
+    <li><span><b>Ao Nang → Phi Phi ferry, 24 Dec</b> and <b>Phi Phi → Phuket ferry, 26 Dec:</b> high-season timetables.</span><span class="src">12Go, operators, your hotel</span></li>
+    <li><span><b>Maya Bay:</b> national park fee, visitor time slots, and the no-swimming rule at the bay.</span><span class="src">Tour operator, DNP Thailand</span></li>
+    <li><span><b>Grand Palace</b> opening hours, entry fees and any closures for royal ceremonies.</span><span class="src">royalgrandpalace.th</span></li>
+    <li><span><b>Hotel prices</b> for 24–26 Dec on Phi Phi and 21–28 Dec in Ao Nang and Phuket. Christmas rates can be double normal.</span><span class="src">Booking.com, Agoda, hotel direct</span></li>
+    <li><span><b>Cannabis and vape rules</b>, which are still shifting.</span><span class="src">Recent news, your hotel</span></li>
+    <li><span><b>INR–THB rate</b> and your card’s foreign transaction fees.</span><span class="src">xe.com, your bank</span></li>
+  </ul>
+</section>
+
+</main>
+<footer class="wrap">Planned 10 Nov 2026 for a December trip. Flight and ferry times come from recent schedules and may move. Treat every time on this page as “around”.</footer>
+
+<script>
+const DAYS = [
+ {d:18,w:"Fri",city:"bkk",title:"Land, eat, sleep",sub:"Arrival night only. The goal is to get to bed without drama.",items:[
+  ["20:45","Land at Suvarnabhumi (BKK)","Peak-week immigration can take 45–90 min. Have your TDAC QR, hotel address and return ticket on screen.",[]],
+  ["21:45","Data and a little cash","Activate your eSIM or buy a tourist SIM. Exchange just enough for tonight, because airport rates are poor.",[]],
+  ["22:15","Grab XL or the Level 1 taxi queue to Sukhumvit","~40–60 min. Four people and bags won’t fit a standard sedan.",[]],
+  ["23:30","Check in","Email the hotel beforehand that you’re arriving after 23:00, so they don’t release the room.",["relax"]],
+  ["00:00","Optional midnight snack","7-Eleven toasties or a soi noodle stall, then sleep. No alarm for tomorrow.",["relax"]]
+ ],slack:"If immigration is slow and everyone’s wrecked, skip the snack. Tomorrow starts at 9:30 anyway."},
+ {d:19,w:"Sat",city:"bkk",title:"Temples, river, the big night",sub:"The classic Bangkok day, started late and broken up with a nap.",items:[
+  ["09:30","Grand Palace and Emerald Buddha","Wear covered shoulders and knees. Arrive by 9:30 before the tour-bus wave.",["photo"]],
+  ["11:30","Wat Pho, the reclining Buddha","A 10-min walk. Its massage school is the original Thai massage lineage.",["photo","massage"]],
+  ["12:30","Cross-river ferry to Wat Arun","A few minutes on the boat. The steep steps give great river shots.",["photo"]],
+  ["13:30","Riverside lunch, then back to the hotel","",[]],
+  ["14:30","Nap and pool","This is the rest stop that makes tonight work.",["relax"]],
+  ["17:00","Thai or foot massage","Health Land (Asok) and similar mid-price chains. Book ahead on weekends.",["massage","relax"]],
+  ["19:00","Chinatown (Yaowarat) street food","Neon signs, wok fire, crowds. The best night photography in Bangkok.",["photo"]],
+  ["21:30","Rooftop, then Sukhumvit Soi 11 or Thonglor","Bars on Soi 11, clubs in Thonglor and Ekkamai. Smart-casual: no shorts or flip-flops at rooftops.",["nightlife"]]
+ ],slack:"If temples run long, skip Wat Arun’s climb and photograph it from the Tha Tien pier at sunset."},
+ {d:20,w:"Sun",city:"bkk",title:"Chatuchak and the last Bangkok night",sub:"Weekend market day, because Chatuchak only opens Saturday and Sunday.",items:[
+  ["10:30","Slow brunch","Sleep off last night.",["relax"]],
+  ["12:00","Chatuchak Weekend Market","BTS to Mo Chit. Vintage, streetwear, coconut ice cream. It’s hot, so hydrate and agree a meeting point.",["photo"]],
+  ["15:30","Pool and pack","You fly south tomorrow morning. Pack light, because ferries and Phi Phi’s lanes are coming.",["relax"]],
+  ["18:00","Rooftop sunset drinks","Octave (Marriott Sukhumvit 57) or Tichuca.",["nightlife","photo"]],
+  ["20:00","Jodd Fairs night market (Rama 9)","Dinner from stalls: volcano ribs, grilled seafood, mango sticky rice.",["photo"]],
+  ["22:30","Optional: one round on Khao San","Or an early night. Tomorrow’s flight is around 10:30.",["nightlife"]]
+ ],slack:"Want Ayutthaya after all? Do a half-day there this morning (leave 07:30, back ~13:30), then a short Chatuchak visit in the afternoon."},
+ {d:21,w:"Mon",city:"kbv",title:"Fly south to Ao Nang",sub:"A short flight, then straight into beach mode.",items:[
+  ["08:30","Check out, Grab to the airport","DMK or BKK depending on your ticket. Allow ~60 min for Monday traffic.",[]],
+  ["10:30","Fly Bangkok → Krabi (~1h20)","",[]],
+  ["12:30","Transfer to Ao Nang (~35 min)","Pre-book a van or take a Grab from arrivals.",[]],
+  ["14:00","Check in, lunch, pool","",["relax"]],
+  ["17:00","Sunset at Nopparat Thara or Ao Nang beach","Longtails and karsts against the sun. A classic shot.",["beach","photo"]],
+  ["20:00","Ao Nang beach-road bars","Live music, fire shows and buckets.",["nightlife"]]
+ ],slack:"Arrived tired? Skip the bars. A beachfront dinner and an early night set up Railay tomorrow."},
+ {d:22,w:"Tue",city:"kbv",title:"Railay by longtail",sub:"The beach everyone pictures when they think of Krabi.",items:[
+  ["09:00","Breakfast","",["relax"]],
+  ["10:00","Longtail from Ao Nang beach to Railay (~15 min)","Buy return tickets at the official counter.",["beach"]],
+  ["10:30","Railay West, then Phra Nang Cave Beach","Limestone cliffs, swimming, some of the best photos of the trip.",["beach","photo"]],
+  ["13:30","Optional viewpoint scramble","Steep, muddy and roped. Only in proper shoes, and skip it if anyone isn’t keen.",["photo"]],
+  ["17:00","Longtail back before dark","Boats get scarce after sunset.",[]],
+  ["18:30","Massage, then dinner","",["massage","relax"]]
+ ],slack:"Skip the viewpoint and just stay on Phra Nang beach. Nobody regrets that."},
+ {d:23,w:"Wed",city:"kbv",title:"Hong Islands, last Ao Nang night",sub:"Lagoons in the morning, beach bars at night.",items:[
+  ["08:30","Hong Islands speedboat tour","A hidden lagoon ringed by cliffs, kayaking, snorkelling, quiet beaches. Back by mid-afternoon.",["beach","photo"]],
+  ["15:30","Pool and nap","",["relax"]],
+  ["18:00","Massage","",["massage","relax"]],
+  ["20:00","Dinner and Ao Nang bars","",["nightlife"]],
+  ["22:30","Pack for Phi Phi","Two nights there, and no cars. Light bags win.",[]]
+ ],slack:"Prefer slow? Swap the Hong tour for a half-day 4-Islands sunset trip (some run bioluminescent-plankton night swims)."},
+ {d:24,w:"Thu",city:"ppd",title:"Christmas Eve on Phi Phi",sub:"Ferry over, climb the viewpoint, party on the beach.",items:[
+  ["09:00","Ferry Ao Nang → Phi Phi Don (~2h)","Hotel pickup. Pay the small island fee at Tonsai pier.",[]],
+  ["11:30","Drop bags, lunch in Tonsai village","Porters with carts meet the ferry. There are no cars on the island.",[]],
+  ["13:00","Beach time at Loh Dalum","Shallow, calm water. Book tomorrow’s early Maya Bay boat while you’re in the village.",["beach","relax"]],
+  ["16:30","Phi Phi Viewpoint hike (~30 min uphill)","The famous double-bay view. Go for golden hour.",["photo"]],
+  ["19:30","Christmas Eve dinner","Book a beachfront table. Many places run set menus.",[]],
+  ["21:30","Loh Dalum beach parties","Fire shows, DJs, buckets. Christmas Eve is one of the island’s big nights.",["nightlife"]]
+ ],slack:"Pace yourselves if you’re doing the 07:00 Maya Bay boat, or switch it to an afternoon tour tomorrow."},
+ {d:25,w:"Fri",city:"ppd",title:"Maya Bay and Christmas night",sub:"Early boat, lazy middle, second party night.",items:[
+  ["07:00","Early longtail or speedboat to Phi Phi Leh","Maya Bay, Pileh Lagoon, Viking Cave. Going early beats the day-trip crowds. Swimming at Maya Bay itself isn’t allowed.",["photo","beach"]],
+  ["11:00","Brunch and a long nap","",["relax"]],
+  ["14:30","Long Beach or Monkey Beach by longtail","Quieter sand and good snorkelling a few minutes away.",["beach"]],
+  ["17:30","Massage","",["massage","relax"]],
+  ["21:00","Christmas night beach party","Loh Dalum again, or the bars in Tonsai village.",["nightlife"]]
+ ],slack:"If Christmas Eve ran late, skip the 07:00 boat and take an afternoon or sunset Maya Bay tour instead."},
+ {d:26,w:"Sat",city:"hkt",title:"Easy ferry to Phuket",sub:"No early start. Just a boat ride and a beach afternoon.",items:[
+  ["10:00","Slow breakfast, check out","",["relax"]],
+  ["11:30","Ferry Phi Phi → Phuket, Rassada pier (~1.5–2h)","Book it with a road transfer to your hotel.",[]],
+  ["14:30","Check in at Kata or Karon","",[]],
+  ["15:30","Beach and pool","",["beach","relax"]],
+  ["18:00","Sunset swim, easy dinner","",["beach","relax"]],
+  ["21:00","Optional: Bangla Road tonight instead","Patong is 20 min away. With Monday’s early airport run, tonight is the Phuket night with no curfew, if you still have energy after Phi Phi.",["nightlife"]]
+ ],slack:"Two party nights behind you? Stay in Kata tonight, and do Bangla on Sunday with a ~01:00 cut-off."},
+ {d:27,w:"Sun",city:"hkt",title:"Old Town, sunset cape, last big night",sub:"Phuket’s best bits, then the finale, with a cut-off for Monday’s flight.",items:[
+  ["09:30","Slow breakfast","",["relax"]],
+  ["10:30","Big Buddha","Hilltop views over Chalong Bay. Cover shoulders and knees.",["photo"]],
+  ["12:00","Phuket Old Town","Pastel Sino-Portuguese shophouses on Thalang and Soi Romanee, plus cafés. A photographer’s favourite.",["photo"]],
+  ["14:30","Kata Noi beach and a last massage","",["beach","massage","relax"]],
+  ["17:45","Sunset at Promthep Cape or the Karon viewpoint","Promthep is iconic but crowded. Karon viewpoint is calmer, with a view of three bays.",["photo"]],
+  ["19:30","Pack, then dinner","Pack before going out, so tomorrow morning is just a quick sweep of the room. Web check-in tonight.",[]],
+  ["21:00","Bangla Road, Patong","The trip finale. You leave for the airport at 07:30, so aim to be back in Kata by ~01:00. Agree a meeting point and a ride home.",["nightlife"]]
+ ],slack:"Want a later last night? Move Bangla to Saturday and make tonight a sunset dinner and early night."},
+ {d:28,w:"Mon",city:"home",title:"Fly home from Phuket",sub:"Flight at 11:00. An early, simple morning.",items:[
+  ["06:45","Wake up, final sweep of the room","You packed last night, so this takes 10 minutes.",[]],
+  ["07:00","Breakfast or breakfast box","Ask the hotel the day before if breakfast opens later than 07:00.",[]],
+  ["07:30","Van or Grab XL to Phuket airport (~1h)","Pre-book it. Morning traffic is usually light, but keep the buffer.",[]],
+  ["08:30","Check in, immigration, coffee","Peak-week queues can be long, which is why you’re there 2.5h early.",[]],
+  ["11:00","Fly Phuket → Delhi (~4h30)","",[]],
+  ["14:15","Land in Delhi (IST)","A midday arrival dodges most winter-fog delays. Log in for WFH from home if needed.",["relax"]]
+ ],slack:"If Sunday ran late, sleep in the van. Nothing else today needs energy."}
+];
+const CITY = {bkk:["Bangkok","var(--bkk)","var(--bkk-soft)"],kbv:["Ao Nang, Krabi","var(--kbv)","var(--kbv-soft)"],ppd:["Koh Phi Phi","var(--ppd)","var(--ppd-soft)"],hkt:["Phuket","var(--hkt)","var(--hkt-soft)"],home:["Travel home","var(--muted)","var(--surface-2)"]};
+
+let cur = 0, tag = "all";
+const ribbon = document.getElementById("ribbon"), pick = document.getElementById("dayPick"), card = document.getElementById("dayCard");
+DAYS.forEach((day,i)=>{
+  const b = document.createElement("button");
+  b.className = "night " + day.city; b.type="button";
+  b.innerHTML = `<span class="d">${day.d}</span><span class="w">${day.w}</span>`;
+  b.setAttribute("aria-label", `${day.w} ${day.d} December, ${CITY[day.city][0]}: ${day.title}`);
+  b.addEventListener("click",()=>{show(i);document.getElementById("itinerary").scrollIntoView()});
+  ribbon.appendChild(b);
+  const p = document.createElement("button");
+  p.type="button"; p.style.setProperty("--city",CITY[day.city][1]);
+  p.innerHTML = `<b>${day.w} ${day.d}</b>${CITY[day.city][0]}`;
+  p.addEventListener("click",()=>show(i));
+  pick.appendChild(p);
+});
+function esc(s){return s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}
+function show(i){
+  cur = i; const day = DAYS[i], c = CITY[day.city];
+  card.style.setProperty("--city",c[1]); card.style.setProperty("--city-soft",c[2]);
+  card.innerHTML = `
+    <div class="day-head"><h3>${day.w} ${day.d} Dec: ${esc(day.title)}</h3><span class="city-tag">${c[0]}</span></div>
+    <p class="day-sub">${esc(day.sub)}</p>
+    <ol class="tl">${day.items.map(it=>`
+      <li data-tags="${it[3].join(" ")}"><time>${it[0]}</time><div><div class="what">${esc(it[1])}</div>${it[2]?`<div class="why">${esc(it[2])}</div>`:""}${it[3].length?`<div class="tags">${it[3].map(t=>`<span class="tag">${t==="relax"?"downtime":t}</span>`).join("")}</div>`:""}</div></li>`).join("")}
+    </ol>
+    <div class="slack"><b>If you need slack:</b> ${esc(day.slack)}</div>`;
+  [...ribbon.children].forEach((b,j)=>b.setAttribute("aria-pressed", j===i));
+  [...pick.children].forEach((b,j)=>b.setAttribute("aria-pressed", j===i));
+  document.getElementById("prevDay").disabled = i===0;
+  document.getElementById("nextDay").disabled = i===DAYS.length-1;
+  applyTag();
+}
+function applyTag(){
+  card.querySelectorAll(".tl li").forEach(li=>{
+    const t = li.dataset.tags.split(" ");
+    li.classList.toggle("dim", tag!=="all" && !t.includes(tag));
+  });
+}
+document.querySelectorAll(".chip").forEach(ch=>ch.addEventListener("click",()=>{
+  tag = ch.dataset.tag;
+  document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed", x===ch));
+  applyTag();
+}));
+document.getElementById("prevDay").onclick=()=>show(Math.max(0,cur-1));
+document.getElementById("nextDay").onclick=()=>show(Math.min(DAYS.length-1,cur+1));
+show(0);
+
+const PLACES = {
+ del:{name:"Delhi (DEL)",c:"var(--muted)",when:"Out Fri 18 Dec, back Mon 28 Dec",body:"Start and finish. You fly in to Bangkok and home from Phuket, so the trip never doubles back.",facts:["Out: Delhi → Bangkok Suvarnabhumi, booked, lands ~20:30–21:00","Back: Phuket → Delhi, Mon 28 Dec at 11:00, booked. Lands ~14:00–14:30","Keep the return booking handy, because immigration may ask to see it"],day:0},
+ bkk:{name:"Bangkok",c:"var(--bkk)",when:"Stop 1, Fri 18 to Mon 21 Dec, 3 nights",body:"The city leg: temples, markets, rooftops and the biggest nightlife on the trip.",facts:["Stay: Sukhumvit, Asok to Phrom Phong","Sat: Grand Palace, Wat Pho, Wat Arun, Chinatown, Soi 11","Sun: Chatuchak weekend market, rooftop sunset, Jodd Fairs","Mon: fly south to Krabi in the morning"],day:1},
+ ayu:{name:"Ayutthaya",c:"var(--bkk)",when:"Optional, not in the plan",body:"Thailand’s old royal capital, ~1h15 north of Bangkok. Temple ruins, including the famous Buddha head in tree roots.",facts:["If wanted: half-day on Sun 20 Dec, leaving ~07:30, back ~13:30","Wat Mahathat, Wat Chaiwatthanaram, Wat Phra Si Sanphet","Covered shoulders and knees at the active temples"],day:2},
+ kbv:{name:"Ao Nang, Krabi",c:"var(--kbv)",when:"Stop 2, Mon 21 to Thu 24 Dec, 3 nights",body:"Your beach base. Limestone cliffs, longtail boats, and a lively beach road for evenings.",facts:["Arrive: flight Bangkok → Krabi ~1h20, then ~35 min road","Tue: Railay by longtail","Wed: Hong Islands speedboat","Leave: ferry to Phi Phi on the morning of 24 Dec"],day:3},
+ kbvair:{name:"Krabi airport (KBV)",c:"var(--kbv)",when:"Arrive Mon 21 Dec, ~12:30",body:"Your one internal flight lands here. Ao Nang is about 35 minutes by van or Grab.",facts:["From Bangkok: Thai AirAsia, Thai Lion (DMK), Thai Airways, Thai Vietjet (BKK)","Pre-book a van for four people with bags"],day:3},
+ railay:{name:"Railay",c:"var(--kbv)",when:"Tue 22 Dec",body:"A car-free peninsula reachable only by boat, with some of the best beaches in Thailand.",facts:["Longtail from Ao Nang beach, ~15 min. Buy return tickets at the official counter","Railay West, Phra Nang Cave Beach, optional viewpoint scramble","Head back before dark, when boats thin out"],day:4},
+ hong:{name:"Hong Islands",c:"var(--kbv)",when:"Wed 23 Dec, morning",body:"A cliff-ringed hidden lagoon, kayaking and snorkelling. Calm and photogenic.",facts:["Speedboat half or most of a day, from ~08:30","Back by mid-afternoon for a massage and the beach-road bars"],day:5},
+ four:{name:"4 Islands (alternative)",c:"var(--kbv)",when:"Optional swap for Wed 23 Dec",body:"Phra Nang, Chicken Island, Tup and Poda, close to Ao Nang. Some tours run at sunset with bioluminescent-plankton swims.",facts:["Shorter and easier than the Hong Islands","Good if the group wants a lazier day"],day:5},
+ ppd:{name:"Koh Phi Phi Don",c:"var(--ppd)",when:"Stop 3, Thu 24 to Sat 26 Dec, 2 nights",body:"The party island. No cars, beach bars and fire shows, plus the famous viewpoint.",facts:["Arrive: ferry from Ao Nang ~2h, morning of 24 Dec","Christmas Eve: viewpoint at golden hour, then beach parties","Christmas Day: early Maya Bay, then the Christmas night party","Smallest hotel supply on the trip, so book it first","Leave: late-morning ferry to Phuket on 26 Dec"],day:6},
+ maya:{name:"Maya Bay (Phi Phi Leh)",c:"var(--ppd)",when:"Fri 25 Dec, ~07:00",body:"The bay from The Beach, plus Pileh Lagoon and Viking Cave. Going early beats the day-trip boats.",facts:["Longtail or speedboat from Phi Phi Don, booked on the island on 24 Dec","National park fee applies. No swimming in Maya Bay itself","If Christmas Eve ran late, take an afternoon or sunset tour instead"],day:7},
+ rassada:{name:"Rassada pier, Phuket",c:"var(--hkt)",when:"Arrive Sat 26 Dec, early afternoon",body:"Where the Phi Phi ferry lands, in Phuket Town on the east coast.",facts:["Ferry from Phi Phi ~1.5–2h","Book a combined ticket with road transfer to Kata (~45–60 min)"],day:8},
+ kata:{name:"Kata beach area, Phuket",c:"var(--hkt)",when:"Stop 4, Sat 26 to Mon 28 Dec, 2 nights",body:"Your Phuket base. A proper swimming beach with calmer nights, 20 min from Patong.",facts:["Sat: arrive, sunset swim, easy dinner","Sun: Big Buddha, Old Town, Kata Noi, sunset, Bangla Road","Mon: leave for the airport by 07:30"],day:8},
+ hkt:{name:"Phuket",c:"var(--hkt)",when:"Stop 4, Sat 26 to Mon 28 Dec, 2 nights",body:"Thailand’s largest island, linked to the mainland by road bridges in the north. It’s big (about 50 km top to bottom), so it has its own airport, towns and many beaches. The finale: big beaches, Old Town, sunset capes and Bangla Road, then the flight home.",facts:["Stay: Kata or Karon, two neighbouring beach areas on the west coast","Sun: Big Buddha, Old Town, Promthep sunset, Bangla Road","Mon 28 Dec: 11:00 flight home"],day:8},
+ patong:{name:"Patong and Bangla Road",c:"var(--hkt)",when:"Sun 27 Dec, night",body:"Phuket’s loudest strip of clubs and bars. The trip’s last big night.",facts:["~20 min from Kata by Grab or Bolt","Check drink prices first, and watch for bill scams and drink spiking","Agree a meeting point and a ride home, and be back by ~01:00 before the early airport run"],day:9},
+ oldtown:{name:"Phuket Old Town",c:"var(--hkt)",when:"Sun 27 Dec, midday",body:"Pastel Sino-Portuguese shophouses, street art and cafés. A photographer’s favourite.",facts:["Thalang Road and Soi Romanee","Pair it with the Big Buddha on the way"],day:9},
+ promthep:{name:"Promthep Cape",c:"var(--hkt)",when:"Sun 27 Dec, sunset",body:"Phuket’s classic sunset point at the island’s southern tip.",facts:["Crowded. Karon viewpoint is a calmer alternative","~15 min from Kata"],day:9},
+ hktair:{name:"Phuket airport (HKT)",c:"var(--hkt)",when:"Fly home Mon 28 Dec, 11:00",body:"In the north of the island, about 1 hour from Kata.",facts:["Leave Kata by 07:30 and be at the airport by ~08:30","Web check-in the night before","Lands in Delhi around 14:00–14:30 IST"],day:10},
+ cnx:{name:"Chiang Mai",c:"var(--muted)",when:"Not on this trip",body:"Dropped for more beach time (Option 3). Adding it back would mean two internal flights, or a sleeper train plus a flight.",facts:["Great for a future trip: temples, elephants, cooler weather"],day:null},
+ cri:{name:"Chiang Rai",c:"var(--muted)",when:"Not on this trip",body:"The White Temple and the Golden Triangle. It pairs best with Chiang Mai on a north-focused trip.",facts:[],day:null},
+ pai:{name:"Pai",c:"var(--muted)",when:"Not on this trip",body:"A backpacker mountain town ~3 hours of winding road from Chiang Mai. It needs 2–3 days to be worth it.",facts:[],day:null},
+ skt:{name:"Sukhothai",c:"var(--muted)",when:"Not on this trip",body:"An ancient capital. Ayutthaya covers similar ground as an easy day trip from Bangkok.",facts:[],day:null},
+ usm:{name:"Koh Samui",c:"var(--muted)",when:"Not on this trip",body:"On the Gulf of Thailand side, where late in the year is typically the tail of the rainy season. Your Andaman route is at its driest in December.",facts:["Flights are mostly Bangkok Airways and pricey, with no direct flight to Delhi","Krabi to Samui overland is a 5–7 hour bus-and-ferry day","A better pick for a February–August trip"],day:null},
+ pgn:{name:"Koh Phangan",c:"var(--muted)",when:"Not on this trip",body:"Home of the Full Moon Party on Haad Rin beach. This December it falls on Thu 24 Dec, inside your dates, but it would mean dropping Krabi and Phi Phi. Gulf-side weather is also less reliable in December, and there’s no direct flight home.",facts:[],day:null},
+ tao:{name:"Koh Tao",c:"var(--muted)",when:"Not on this trip",body:"A diving island on the Gulf side. It’s a long way from your route and wetter in December.",facts:[],day:null}
+};
+const mapDetail = document.getElementById("mapDetail");
+function selectPlace(id){
+  const p = PLACES[id]; if(!p) return;
+  document.querySelectorAll("[data-place]").forEach(el=>el.classList.toggle("active", el.dataset.place===id || (id==="hkt" && el.dataset.place==="kata") || (id==="kata" && el.dataset.place==="hkt")));
+  mapDetail.style.setProperty("--c", p.c);
+  mapDetail.innerHTML = `<div class="md-when">${esc(p.when)}</div><h3>${esc(p.name)}</h3><p>${esc(p.body)}</p>${p.facts.length?`<ul>${p.facts.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>`:""}${p.day!==null?`<button class="md-btn" type="button" id="mdGo">Open the day plan for ${DAYS[p.day].w} ${DAYS[p.day].d} Dec</button>`:`<p class="md-hint">See The route section for why it’s not in this plan.</p>`}`;
+  const go = document.getElementById("mdGo");
+  if(go) go.onclick = ()=>{ show(p.day); document.getElementById("itinerary").scrollIntoView(); };
+}
+document.querySelectorAll("[data-place]").forEach(el=>{
+  el.addEventListener("click",()=>selectPlace(el.dataset.place));
+  el.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); selectPlace(el.dataset.place); } });
+});
+selectPlace("bkk");
+
+const STAYS = [
+ {city:"bkk",name:"Bangkok",nights:"18–21 Dec, 3 nights",area:"Sukhumvit, between Asok and Phrom Phong. You’re on the BTS and MRT, with rooftops and Soi 11 nightlife within walking distance."},
+ {city:"kbv",name:"Ao Nang, Krabi",nights:"21–24 Dec, 3 nights",area:"Within walking distance of Ao Nang beach. That’s where the longtails, tour pickups and beach-road bars are."},
+ {city:"ppd",name:"Koh Phi Phi",nights:"24–26 Dec, 2 nights",area:"Tonsai village or Loh Dalum. Everything is walkable, and the parties are on your doorstep. Book first, because rooms are scarce over Christmas."},
+ {city:"hkt",name:"Phuket",nights:"26–28 Dec, 2 nights",area:"Stay in the Kata or Karon beach areas, side by side on the west coast. They have better beaches and calmer nights, 20 min from Bangla Road and ~1 hr from the airport. Choose Patong only if nightlife beats sleep."}
+];
+document.getElementById("staysWrap").innerHTML = `<div class="stay-list">${STAYS.map(s=>`
+  <div class="stay" style="--city:${CITY[s.city][1]}"><h3>${s.name}</h3><div class="nights">${s.nights}</div><p>${esc(s.area)}</p></div>`).join("")}</div>`;
+
+const GROUPS = [
+ {k:"now",title:"Book this week",when:"Christmas inventory is going fast",items:[
+  ["Phuket → Delhi flight, Mon 28 Dec","11:00 departure, booked"],
+  ["Phi Phi hotel, 24–26 Dec","Smallest supply on the trip. Book this first"],
+  ["Ao Nang hotel, 21–24 Dec","Free cancellation if possible"],
+  ["Phuket hotel, 26–28 Dec","Ask for an early breakfast or breakfast box on the 28th"],
+  ["Bangkok → Krabi flight, Mon 21 Dec","Add checked bags on low-cost fares"],
+  ["Bangkok hotel, 18–21 Dec","Twin beds, late-arrival note for 18 Dec"],
+  ["Travel insurance for all four","Covers boats, scooters and missed connections"]]},
+ {k:"soon",title:"Book 1–3 weeks before",when:"Late Nov to early Dec",items:[
+  ["Ferry Ao Nang → Phi Phi, 24 Dec","With hotel pickup"],
+  ["Ferry Phi Phi → Phuket, 26 Dec","With a transfer to Kata/Karon"],
+  ["Hong Islands tour, 23 Dec","Licensed speedboat operator"],
+  ["Christmas Eve dinner table, Phi Phi","Beachfront spots fill up"],
+  ["Krabi airport transfer, 21 Dec","Or take a Grab on arrival"],
+  ["Kata → Phuket airport van, 07:30 Mon 28 Dec","Pre-book through the hotel"],
+  ["eSIMs for all four phones","Install before flying"],
+  ["TDAC arrival cards (16–18 Dec)","Official site only, free"]]},
+ {k:"arrive",title:"Sort out there",when:"No need to pre-book",items:[
+  ["Massages everywhere","Walk in almost anywhere"],
+  ["Longtails to Railay","Official counter on Ao Nang beach"],
+  ["Early Maya Bay boat, 25 Dec","Book on Phi Phi on the 24th"],
+  ["Temples, Chatuchak, night markets","Just turn up"],
+  ["Grab and Bolt rides","Set up the apps and cards before leaving"],
+  ["Bangla Road and rooftops","Walk in; reserve only for Saturday sunset"]]}
+];
+const KEY = "th-trip-checks-v4";
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ state = {}; }
+const groupsEl = document.getElementById("groups");
+groupsEl.innerHTML = GROUPS.map(g=>`<div class="group"><h3>${g.title}</h3><div class="when">${g.when}</div>${g.items.map((it,i)=>{const id=g.k+i;return `<label class="check${state[id]?" done":""}"><input type="checkbox" data-id="${id}"${state[id]?" checked":""}><span>${esc(it[0])}<small>${esc(it[1])}</small></span></label>`}).join("")}</div>`).join("");
+function updateBar(){
+  const boxes = groupsEl.querySelectorAll("input"); const done = [...boxes].filter(b=>b.checked).length;
+  document.getElementById("barFill").style.width = (done/boxes.length*100)+"%";
+  document.getElementById("barText").textContent = `${done} of ${boxes.length} done`;
+}
+groupsEl.addEventListener("change",e=>{
+  const b = e.target; if(!b.dataset.id) return;
+  state[b.dataset.id] = b.checked; b.closest(".check").classList.toggle("done", b.checked);
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(err){}
+  updateBar();
+});
+document.getElementById("resetChecks").onclick=()=>{
+  state = {}; try { localStorage.removeItem(KEY); } catch(e){}
+  groupsEl.querySelectorAll("input").forEach(b=>{b.checked=false;b.closest(".check").classList.remove("done")});
+  updateBar();
+};
+updateBar();
+
+const rate=document.getElementById("rate"), thb=document.getElementById("thb"), inr=document.getElementById("inr");
+function fromThb(){ inr.value = Math.round((+thb.value||0)*(+rate.value||0)); }
+function fromInr(){ const r=+rate.value||1; thb.value = Math.round((+inr.value||0)/r); }
+thb.addEventListener("input",fromThb); inr.addEventListener("input",fromInr); rate.addEventListener("input",fromThb);
+fromThb();
+
+const root=document.documentElement, tb=document.getElementById("themeBtn");
+function isDark(){ const t=root.dataset.theme; return t ? t==="dark" : matchMedia("(prefers-color-scheme: dark)").matches; }
+function label(){ tb.textContent = isDark() ? "Light mode" : "Dark mode"; }
+try { const saved = localStorage.getItem("th-trip-theme"); if(saved) root.dataset.theme = saved; } catch(e){}
+label();
+tb.onclick=()=>{ root.dataset.theme = isDark() ? "light" : "dark"; try{localStorage.setItem("th-trip-theme",root.dataset.theme)}catch(e){} label(); };
+</script>
+</body>
+</html>
