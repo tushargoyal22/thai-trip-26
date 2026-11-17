@@ -56,6 +56,10 @@ header.hero{padding:44px 0 30px}
 .hero h1{font-size:clamp(42px,8.4vw,100px);font-weight:800;letter-spacing:-.035em;line-height:.92}
 .hero h1 span{display:block}
 .hero h1 .c1{color:var(--bkk)} .hero h1 .c2{color:var(--kbv)} .hero h1 .c3{color:var(--ppd)} .hero h1 .c4{color:var(--hkt)}
+.hero h1 .either{display:flex;flex-wrap:wrap;align-items:center;gap:.12em .18em;margin:.06em 0}
+.hero h1 .either .pill{display:inline-block;font-size:.52em;letter-spacing:-.02em;line-height:1;padding:.16em .42em .2em;border:3px dashed currentColor;border-radius:.5em}
+.hero h1 .either .or{font-size:.5em;opacity:.7}
+.hero h1 .either .cm{font-size:.52em;margin-left:-.12em;align-self:flex-end}
 .hero-meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin:26px 0 30px;color:var(--muted);font-size:15px}
 .hero-meta b{color:var(--ink);font-weight:600}
 .ribbon-label{font-size:14px;color:var(--muted);margin-bottom:8px}
@@ -135,6 +139,13 @@ details.past{margin-top:22px}
 .route .rec{font-size:13px;font-weight:600;color:var(--kbv);margin-bottom:6px}
 
 /* Map */
+.night{position:relative}
+.night.split{background:linear-gradient(120deg,var(--bkk) 0 72%,var(--kbv) 72% 100%)}
+.night .moon{position:absolute;top:-11px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:var(--body);font-size:11px;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:1px 7px;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.ribbon{padding-top:12px}
+.moon-note{font-size:14px;color:var(--muted);margin:12px 0 0}
+.moon-note a{color:var(--ink);font-weight:600}
+@media (max-width:820px){.night .moon{font-size:0;padding:0 4px}.night .moon::before{content:"🌕";font-size:13px}}
 .map-wrap{--sea:#DCEAF1;--land:#FFFFFF}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .map-wrap{--sea:#16203A;--land:#262B4A}}
 :root[data-theme="dark"] .map-wrap{--sea:#16203A;--land:#262B4A}
@@ -184,6 +195,22 @@ details.past{margin-top:22px}
 .md-btn{border:0;background:var(--ink);color:var(--bg);border-radius:8px;padding:9px 14px;font-size:15px;cursor:pointer}
 .md-hint{font-size:13px;color:var(--muted);margin-top:8px}
 @media (max-width:820px){.map-grid{grid-template-columns:1fr}.map-main svg{max-height:560px}}
+
+/* Tours */
+.tours{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.tour{background:var(--surface);border-radius:14px;padding:20px 22px;border-left:6px solid var(--city);display:flex;flex-direction:column}
+.tour .t-when{font-size:13px;font-weight:600;color:var(--city);margin-bottom:4px}
+.tour h3{font-size:22px;font-weight:800;margin-bottom:4px}
+.tour .t-from{font-size:14px;color:var(--muted);margin-bottom:10px}
+.tour ul{margin:0 0 12px;padding-left:18px;font-size:15px}
+.tour li{margin-bottom:5px}
+.tour .t-book{font-size:14px;background:var(--city-soft);border-radius:8px;padding:9px 12px;margin-bottom:12px}
+.tour .t-alt{font-size:12px;font-weight:600;color:var(--muted);background:var(--surface-2);border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:3px}
+.tour button{align-self:flex-start;margin-top:auto;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:7px 12px;font-size:14px;cursor:pointer}
+.not-tours{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
+.not-tours div{background:var(--surface-2);border-radius:12px;padding:16px 18px;font-size:15px;color:var(--muted)}
+.not-tours b{color:var(--ink)}
+@media (max-width:820px){.tours,.not-tours{grid-template-columns:1fr}}
 
 /* Tables */
 .scroll-x{overflow-x:auto;border-radius:12px;background:var(--surface)}
@@ -278,7 +305,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
 
 <header class="hero wrap">
   <p class="kicker">Four friends from Delhi NCR, ten nights, one flight inside Thailand</p>
-  <h1><span class="c1">Bangkok,</span><span class="c2">Krabi,</span><span class="c3">Phi Phi,</span><span class="c4">Phuket.</span></h1>
+  <h1><span class="c1">Bangkok,</span><span class="c2">Krabi,</span><span class="c3 either"><span class="pill">Phi Phi</span><span class="or">/</span><span class="pill">🌕 Koh Phangan</span><span class="cm">,</span></span><span class="c4">Phuket.</span></h1>
   <div class="hero-meta">
     <div>Fly out <b>Fri 18 Dec 2026</b></div>
     <div>Fly home from Phuket <b>Mon 28 Dec, 11:00</b></div>
@@ -288,8 +315,9 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
   <div class="ribbon-label">Tap a date to open that day’s plan</div>
   <div class="ribbon" id="ribbon"></div>
   <div class="legs" aria-hidden="true">
-    <div class="l1">Bangkok, 3 nights</div><div class="l2">Ao Nang, 3</div><div class="l3">Phi Phi, 2</div><div class="l4">Phuket, 2</div><div class="l5">Home</div>
+    <div class="l1">Bangkok, 3 nights</div><div class="l2">Ao Nang, 3</div><div class="l3">Phi Phi, 2 <span style="white-space:nowrap">/ 🌕 Koh Phangan</span></div><div class="l4">Phuket, 2</div><div class="l5">Home</div>
   </div>
+  <p class="moon-note">🌕 <b style="color:var(--ink)">Optional on 24 Dec:</b> Koh Phangan’s Full Moon Party, for whoever wants it. Out on the 24th, rejoin the group on Phi Phi on the 25th. <a href="#full-moon">How it works</a></p>
 </header>
 
 <nav class="tabs" aria-label="Sections">
@@ -297,6 +325,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
     <a href="#map">Map</a>
     <a href="#route">The route</a>
     <a href="#itinerary">Day by day</a>
+    <a href="#tours">Island tours</a>
     <a href="#getting-around">Flights and ferries</a>
     <a href="#stays">Where to stay</a>
     <a href="#book">Book now</a>
@@ -419,7 +448,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
     <div class="stop" style="--c:var(--bkk)"><div class="n">3 nights</div><div class="p">Bangkok</div><div class="m">Temples, Chinatown, Chatuchak, rooftops</div><span class="hop">Arrive by air</span></div>
     <div class="stop" style="--c:var(--kbv)"><div class="n">3 nights</div><div class="p">Ao Nang, Krabi</div><div class="m">Railay, Hong Islands, beach-road bars</div><span class="hop">Flight ~1h20</span></div>
     <div class="stop" style="--c:var(--ppd)"><div class="n">2 nights</div><div class="p">Koh Phi Phi</div><div class="m">Christmas Eve and Christmas parties, viewpoint, early Maya Bay</div><span class="hop">Ferry ~2h</span></div>
-    <div class="stop" style="--c:var(--hkt)"><div class="n">2 nights</div><div class="p">Phuket (Kata or Karon beach area)</div><div class="m">Old Town, sunset cape, Bangla Road finale</div><span class="hop">Ferry ~1.5–2h</span></div>
+    <div class="stop" style="--c:var(--hkt)"><div class="n">2 nights</div><div class="p">Phuket (Kata or Karon beach area)</div><div class="m">YONA floating beach club, Bangla Road finale</div><span class="hop">Ferry ~1.5–2h</span></div>
     <div class="stop" style="--c:var(--muted)"><div class="n">Mon 28</div><div class="p">Phuket → Delhi</div><div class="m">11:00 nonstop, booked</div><span class="hop">Flight ~4h30</span></div>
   </div>
 
@@ -429,13 +458,13 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
   </div>
 
   <div style="margin-top:30px">
-    <h3 style="font-size:26px;font-weight:800;margin-bottom:8px">Why not Koh Samui, Phangan or Tao?</h3>
-    <p style="color:var(--muted);max-width:72ch">These islands are on the Gulf of Thailand side, the opposite coast from Krabi and Phuket. They’re great islands, just not for this trip. Koh Phangan’s Full Moon Party does fall on Thu 24 Dec, but Phi Phi on Christmas Eve is a great party night too, with beach bars, fire shows and DJs. <b style="color:var(--ink);text-decoration:underline;text-underline-offset:3px">That keeps Krabi and Phi Phi, the group’s must-haves, and avoids crossing coasts.</b></p>
+    <h3 id="full-moon" style="font-size:26px;font-weight:800;margin-bottom:8px">What about Koh Samui, Phangan or Tao?</h3>
+    <p style="color:var(--muted);max-width:72ch">These islands sit on the Gulf of Thailand side, the opposite coast from Krabi and Phuket. They’re lovely, but they belong to a different route, so the main plan sticks to the Andaman side. Phi Phi on Christmas Eve is a great party night in its own right, with beach bars, fire shows and DJs. <b style="color:var(--ink);text-decoration:underline;text-underline-offset:3px">That keeps Krabi and Phi Phi, the group’s must-haves, and avoids crossing coasts.</b> If anyone really wants Koh Phangan’s Full Moon Party on Thu 24 Dec, it can still be done as a short detour from Krabi.</p>
     <div class="why-grid" style="margin-top:16px">
-      <div class="why-card"><h3>Why not pop over for the Full Moon Party on 24 Dec?</h3><p>From Krabi, Phangan is a 5–7 hour bus-and-ferry trip each way. You’d spend 24 Dec getting there, party until dawn, and lose 25 Dec to the trip back. That’s two days gone, plus tired legs for Phi Phi.</p></div>
-      <div class="why-card"><h3>Why not do Phangan first, straight from Bangkok?</h3><p>You’d fly to Samui or Surat Thani and take a ferry to Phangan, then still need a full day to cross to Krabi. Ao Nang would get pushed later, and Christmas on Phi Phi would be lost.</p></div>
+      <div class="why-card"><h3>Full Moon Party detour: out on the 24th, Phi Phi on the 25th</h3><p>For anyone willing to travel, this is the way to do it:</p><ul style="font-size:15px;color:var(--muted);padding-left:18px;margin:8px 0 0"><li><b style="color:var(--ink)">24 Dec, morning:</b> take a bus-and-ferry combo from Krabi to Koh Phangan (~5–7 hours), arriving by evening.</li><li><b style="color:var(--ink)">That night:</b> party on Haad Rin beach until dawn. No hotel needed: Phangan rooms on Full Moon night are very expensive and often require several nights.</li><li><b style="color:var(--ink)">25 Dec, early morning:</b> take a combined ferry–bus–ferry ticket straight to Phi Phi. The earliest leave Thong Sala pier around 05:00 and arrive around 15:30, in time for Christmas night with the group. Sleep on the bus.</li><li><b style="color:var(--ink)">Bags:</b> the rest of the group takes the Phangan crew’s big bags to Phi Phi on the 24th, so you travel with just a daypack. No Ao Nang room needed.</li><li><b style="color:var(--ink)">Backup:</b> if a connection runs late, stay the night in Krabi or Ao Nang and take the morning ferry to Phi Phi on the 26th.</li><li>Book both directions in advance, because the ferries after the party are packed. <span class="verify">Check times</span></li></ul></div>
+      <div class="why-card"><h3>How it fits with the rest of the plan</h3><ul style="font-size:15px;color:var(--muted);padding-left:18px;margin:8px 0 0"><li><b style="color:var(--ink)">If only some of you go:</b> the rest follow the plan on Phi Phi, and the Phangan crew joins them there on the afternoon of the 25th for Christmas night. Everyone takes the 26th ferry to Phuket together.</li><li><b style="color:var(--ink)">If everyone goes:</b> leave Ao Nang with your bags on the morning of the 24th, and take the same Phangan → Phi Phi ticket on the 25th. Phi Phi becomes one night (the 25th) instead of two.</li><li><b style="color:var(--ink)">The trade-off:</b> two long travel days and a sleepless night, in exchange for one legendary party, and less time on Phi Phi.</li></ul></div>
     </div>
-    <p style="color:var(--muted);font-size:15px;margin-top:12px;max-width:72ch">Either way, it adds a fifth stop and at least one full travel day to a 10-night trip, which means dropping Phi Phi or most of Bangkok. Christmas Eve and Christmas on Phi Phi give you two big party nights without crossing the country.</p>
+    <p style="color:var(--muted);font-size:15px;margin-top:12px;max-width:72ch">Fitting Samui or Tao in as proper stops would add a fifth stop and a full travel day, so they’re better saved for a separate trip.</p>
     <div class="scroll-x" style="margin-top:14px">
     <table>
       <thead><tr><th></th><th>Andaman side (your route)</th><th>Gulf side (Samui, Phangan, Tao)</th></tr></thead>
@@ -484,6 +513,65 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
   </div>
 </section>
 
+<section id="tours">
+  <h2>Island tours</h2>
+  <p class="lede">There are two boat tours in the plan, plus one easy alternative and a free afternoon option. December’s calm Andaman sea makes this the best time of year for them.</p>
+  <div class="tours">
+    <article class="tour" style="--city:var(--kbv);--city-soft:var(--kbv-soft)">
+      <div class="t-when">Wed 23 Dec · ~08:30 to mid-afternoon</div>
+      <h3>Hong Islands</h3>
+      <div class="t-from">Speedboat from Ao Nang beach, Krabi</div>
+      <ul>
+        <li>A hidden lagoon ringed by limestone cliffs, reached by kayak</li>
+        <li>Snorkelling and quiet white-sand beaches</li>
+        <li>Back in time for a massage and Ao Nang’s bars</li>
+      </ul>
+      <div class="t-book"><b>Book:</b> through your Ao Nang hotel or Klook, 1–2 weeks ahead. Choose a licensed operator with life jackets.</div>
+      <button type="button" data-day="5">Open Wed 23 in the day plan</button>
+    </article>
+    <article class="tour" style="--city:var(--kbv);--city-soft:var(--kbv-soft)">
+      <div class="t-when">Swap for Wed 23 Dec · half-day</div>
+      <h3>4 Islands<span class="t-alt">Alternative</span></h3>
+      <div class="t-from">Longtail or speedboat from Ao Nang beach, Krabi</div>
+      <ul>
+        <li>Phra Nang Cave Beach, Chicken Island, Tup Island’s low-tide sandbar, and Poda Island</li>
+        <li>Shorter and easier than the Hong Islands</li>
+        <li>Some run at sunset with bioluminescent-plankton night swims</li>
+      </ul>
+      <div class="t-book"><b>Book:</b> at the Ao Nang beach counters or through your hotel, a day or two ahead.</div>
+      <button type="button" data-day="5">Open Wed 23 in the day plan</button>
+    </article>
+    <article class="tour" style="--city:var(--ppd);--city-soft:var(--ppd-soft)">
+      <div class="t-when">Fri 25 Dec · 07:00 to ~11:00</div>
+      <h3>Phi Phi Leh and Maya Bay</h3>
+      <div class="t-from">Longtail or speedboat from Phi Phi Don, your hotel island</div>
+      <ul>
+        <li>Maya Bay, the beach from <i>The Beach</i>. You walk the sand, but swimming there isn’t allowed</li>
+        <li>Pileh Lagoon’s emerald water and Viking Cave</li>
+        <li>Snorkelling stops on the way back</li>
+      </ul>
+      <div class="t-book"><b>Book:</b> on Phi Phi when you arrive on the 24th. The 07:00 start beats the day-trip crowds. A national park fee applies. <span class="verify">Check fee</span></div>
+      <button type="button" data-day="7">Open Fri 25 in the day plan</button>
+    </article>
+    <article class="tour" style="--city:var(--ppd);--city-soft:var(--ppd-soft)">
+      <div class="t-when">Fri 25 Dec · afternoon, optional</div>
+      <h3>Long Beach or Monkey Beach<span class="t-alt">Optional</span></h3>
+      <div class="t-from">Longtail taxi from Tonsai pier, Phi Phi Don</div>
+      <ul>
+        <li>Quieter sand and good snorkelling, a few minutes away</li>
+        <li>An easy add-on after the Maya Bay morning</li>
+        <li>Don’t feed or touch the monkeys</li>
+      </ul>
+      <div class="t-book"><b>Book:</b> just turn up at the longtail stand on the beach. Agree the return pickup time.</div>
+      <button type="button" data-day="7">Open Fri 25 in the day plan</button>
+    </article>
+  </div>
+  <div class="not-tours">
+    <div><b>Not tours, just boat rides:</b> Railay on Tue 22 is a 15-min longtail from Ao Nang to a car-free peninsula you explore on your own. The Ao Nang → Phi Phi (24th) and Phi Phi → Phuket (26th) hops are regular ferries.</div>
+    <div><b>Skipped from Phuket:</b> Phang Nga Bay (James Bond Island) and Phi Phi day tours are Phuket’s big day trips. You’ve already covered Phi Phi properly, so Phuket’s days stay free for YONA and the beach.</div>
+  </div>
+</section>
+
 <section id="getting-around">
   <h2>Flights and ferries</h2>
   <p class="lede">One internal flight and two ferries. Times are taken from recent schedules and seasonal timetables, so confirm each one when booking.</p>
@@ -498,6 +586,49 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
       <tr><td><span class="leg-dot" style="background:var(--muted)"></span><b>Phuket → Delhi</b></td><td>Mon 28 Dec</td><td><b>11:00, booked</b></td><td>Booked</td><td>Lands in Delhi around 14:00–14:30 IST. Leave Kata by 07:30.</td></tr>
     </tbody>
   </table>
+  </div>
+
+  <div style="margin-top:30px">
+    <h3 style="font-size:26px;font-weight:800;margin-bottom:8px">Leaving Bangkok on Sun 20 instead? Two options</h3>
+    <p style="color:var(--muted);max-width:72ch">The plan below flies to Krabi on Monday morning. If the group would rather head south on Sunday, these are the two ways that work. A Sunday midday flight isn’t recommended: it costs you Chatuchak (weekends only) and still saves nothing.</p>
+    <div class="decision" style="margin-top:14px">
+      <div class="opt" style="border-top-color:var(--cnx,var(--hkt))">
+        <h3>Option A: overnight VIP bus</h3>
+        <p>Saves a hotel night. Costs a night of real sleep.</p>
+        <ul>
+          <li>From Bangkok’s Southern Bus Terminal (Sai Tai Mai). Leave around 19:00 and arrive in Krabi around 06:00, about 11–12 hours.</li>
+          <li>Around THB 700–1,150 per person, and you skip the Sunday Bangkok hotel night.</li>
+          <li>Choose a VIP 24 bus (three seats per row). Avoid services that arrive around 03:40.</li>
+          <li>Leave Chatuchak by ~17:00. The terminal is on the west side of the city, ~200 THB by taxi plus traffic.</li>
+          <li>You arrive at Krabi bus terminal, 30–40 min from Ao Nang and hours before check-in. Plan a café-and-beach morning, or pay for early check-in.</li>
+          <li>Book seats early, because Christmas week sells out. <span class="verify">Check times</span></li>
+        </ul>
+      </div>
+      <div class="opt" style="border-top-color:var(--kbv)">
+        <h3>Option B: Sunday evening flight</h3>
+        <p>More beach time. No money saved.</p>
+        <ul>
+          <li>Keep Chatuchak and Sunday afternoon as planned. Skip only the night market.</li>
+          <li>Fly around 19:00–20:30 from Don Mueang or Suvarnabhumi (~1h20), and reach Ao Nang around 22:30.</li>
+          <li>Monday becomes a full day in Ao Nang, making it 4 nights there.</li>
+          <li>No saving: the Sunday night moves from Bangkok to Krabi, which usually costs more in Christmas week.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="scroll-x" style="margin-top:16px">
+    <table>
+      <thead><tr><th></th><th>Current plan: fly Mon morning</th><th>A: overnight bus Sun</th><th>B: fly Sun evening</th></tr></thead>
+      <tbody>
+        <tr><td style="font-weight:600;color:var(--muted)">Saves a hotel night?</td><td>—</td><td><b>Yes</b>, roughly ₹2,000–4,000 per person</td><td>No, the night moves to Krabi</td></tr>
+        <tr><td style="font-weight:600;color:var(--muted)">Sunday in Bangkok</td><td>Full day plus night market</td><td>Chatuchak, then leave by ~17:00</td><td>Chatuchak and afternoon, skip the night market</td></tr>
+        <tr><td style="font-weight:600;color:var(--muted)">Arrival in Ao Nang</td><td>Mon ~13:30</td><td>Mon ~06:30, tired, before check-in</td><td>Sun ~22:30</td></tr>
+        <tr><td style="font-weight:600;color:var(--muted)">Sleep</td><td>Hotel bed</td><td>Bus seat</td><td>Hotel bed</td></tr>
+        <tr><td style="font-weight:600;color:var(--muted)">Christmas-week risk</td><td>Low</td><td>VIP seats sell out, so book early</td><td>Low</td></tr>
+        <tr><td style="font-weight:600;color:var(--muted)">Best if the group…</td><td>wants the easiest trip</td><td>wants to save money</td><td>wants more beach time</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="color:var(--muted);font-size:15px;margin-top:12px;max-width:72ch">The day-by-day plan still shows the Monday-morning flight until the group decides.</p>
   </div>
 
   <div class="decision">
@@ -656,6 +787,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
     <li><span><b>Phuket → Delhi, Mon 28 Dec, 11:00:</b> watch the airline app for schedule changes, and check your checked-baggage allowance.</span><span class="src">Your airline’s app</span></li>
     <li><span><b>Bangkok → Krabi, Tue 22 Dec:</b> flight times and which Bangkok airport (DMK or BKK).</span><span class="src">Airline sites</span></li>
     <li><span><b>Ao Nang → Phi Phi ferry, 24 Dec</b> and <b>Phi Phi → Phuket ferry, 26 Dec:</b> high-season timetables.</span><span class="src">12Go, operators, your hotel</span></li>
+    <li><span><b>YONA beach club, Sun 27 Dec:</b> that it’s operating, which pier it’s anchored at, Sunday hours and day-pass prices.</span><span class="src">yonabeach.com, its Instagram</span></li>
     <li><span><b>Maya Bay:</b> national park fee, visitor time slots, and the no-swimming rule at the bay.</span><span class="src">Tour operator, DNP Thailand</span></li>
     <li><span><b>Grand Palace</b> opening hours, entry fees and any closures for royal ceremonies.</span><span class="src">royalgrandpalace.th</span></li>
     <li><span><b>Hotel prices</b> for 24–26 Dec on Phi Phi and 21–28 Dec in Ao Nang and Phuket. Christmas rates can be double normal.</span><span class="src">Booking.com, Agoda, hotel direct</span></li>
@@ -693,7 +825,7 @@ const DAYS = [
   ["18:00","Rooftop sunset drinks","Octave (Marriott Sukhumvit 57) or Tichuca.",["nightlife","photo"]],
   ["20:00","Jodd Fairs night market (Rama 9)","Dinner from stalls: volcano ribs, grilled seafood, mango sticky rice.",["photo"]],
   ["22:30","Optional: one round on Khao San","Or an early night. Tomorrow’s flight is around 10:30.",["nightlife"]]
- ],slack:"Want Ayutthaya after all? Do a half-day there this morning (leave 07:30, back ~13:30), then a short Chatuchak visit in the afternoon."},
+ ],slack:"Want Ayutthaya after all? Do a half-day there this morning (leave 07:30, back ~13:30), then a short Chatuchak visit in the afternoon. Thinking of heading south tonight instead? See the two Sunday options under Flights and ferries."},
  {d:21,w:"Mon",city:"kbv",title:"Fly south to Ao Nang",sub:"A short flight, then straight into beach mode.",items:[
   ["08:30","Check out, Grab to the airport","DMK or BKK depending on your ticket. Allow ~60 min for Monday traffic.",[]],
   ["10:30","Fly Bangkok → Krabi (~1h20)","",[]],
@@ -724,7 +856,7 @@ const DAYS = [
   ["16:30","Phi Phi Viewpoint hike (~30 min uphill)","The famous double-bay view. Go for golden hour.",["photo"]],
   ["19:30","Christmas Eve dinner","Book a beachfront table. Many places run set menus.",[]],
   ["21:30","Loh Dalum beach parties","Fire shows, DJs, buckets. Christmas Eve is one of the island’s big nights.",["nightlife"]]
- ],slack:"Pace yourselves if you’re doing the 07:00 Maya Bay boat, or switch it to an afternoon tour tomorrow."},
+ ],slack:"Pace yourselves if you’re doing the 07:00 Maya Bay boat, or switch it to an afternoon tour tomorrow. 🌕 Going to the Full Moon Party on Koh Phangan instead? See the detour plan under The route."},
  {d:25,w:"Fri",city:"ppd",title:"Maya Bay and Christmas night",sub:"Early boat, lazy middle, second party night.",items:[
   ["07:00","Early longtail or speedboat to Phi Phi Leh","Maya Bay, Pileh Lagoon, Viking Cave. Going early beats the day-trip crowds. Swimming at Maya Bay itself isn’t allowed.",["photo","beach"]],
   ["11:00","Brunch and a long nap","",["relax"]],
@@ -740,15 +872,15 @@ const DAYS = [
   ["18:00","Sunset swim, easy dinner","",["beach","relax"]],
   ["21:00","Optional: Bangla Road tonight instead","Patong is 20 min away. With Monday’s early airport run, tonight is the Phuket night with no curfew, if you still have energy after Phi Phi.",["nightlife"]]
  ],slack:"Two party nights behind you? Stay in Kata tonight, and do Bangla on Sunday with a ~01:00 cut-off."},
- {d:27,w:"Sun",city:"hkt",title:"Old Town, sunset cape, last big night",sub:"Phuket’s best bits, then the finale, with a cut-off for Monday’s flight.",items:[
-  ["09:30","Slow breakfast","",["relax"]],
-  ["10:30","Big Buddha","Hilltop views over Chalong Bay. Cover shoulders and knees.",["photo"]],
-  ["12:00","Phuket Old Town","Pastel Sino-Portuguese shophouses on Thalang and Soi Romanee, plus cafés. A photographer’s favourite.",["photo"]],
-  ["14:30","Kata Noi beach and a last massage","",["beach","massage","relax"]],
-  ["17:45","Sunset at Promthep Cape or the Karon viewpoint","Promthep is iconic but crowded. Karon viewpoint is calmer, with a view of three bays.",["photo"]],
-  ["19:30","Pack, then dinner","Pack before going out, so tomorrow morning is just a quick sweep of the room. Web check-in tonight.",[]],
+ {d:27,w:"Sun",city:"hkt",title:"YONA beach club, last big night",sub:"Floating beach club in the afternoon, Bangla Road at night, with a cut-off for Monday’s flight.",items:[
+  ["10:00","Slow breakfast, then pack","Pack now so the rest of the day and night is free. Web check-in for tomorrow too.",["relax"]],
+  ["11:00","Kata beach and a massage","",["beach","massage","relax"]],
+  ["13:15","Head to YONA’s pier","It moves between Patong Pier and the east-coast marinas: ~20 min to Patong, ~40–50 min to the marinas. Shuttle boats run about every 20 min.",[]],
+  ["14:00","YONA floating beach club","Pools, sunbeds, cabanas and DJs on a multi-level boat. Book a day pass or cabana ahead (minimum spend applies) and wear smart beachwear. Great for content.",["beach","nightlife","photo"]],
+  ["18:30","Sunset on the water, then shuttle back","",["photo"]],
+  ["19:30","Dinner in Patong","",[]],
   ["21:00","Bangla Road, Patong","The trip finale. You leave for the airport at 07:30, so aim to be back in Kata by ~01:00. Agree a meeting point and a ride home.",["nightlife"]]
- ],slack:"Want a later last night? Move Bangla to Saturday and make tonight a sunset dinner and early night."},
+ ],slack:"If YONA is closed, sold out or anchored far away, swap in Old Town, Big Buddha and a Promthep Cape sunset instead. Want a later last night? Move Bangla to Saturday."},
  {d:28,w:"Mon",city:"home",title:"Fly home from Phuket",sub:"Flight at 11:00. An early, simple morning.",items:[
   ["06:45","Wake up, final sweep of the room","You packed last night, so this takes 10 minutes.",[]],
   ["07:00","Breakfast or breakfast box","Ask the hotel the day before if breakfast opens later than 07:00.",[]],
@@ -764,8 +896,8 @@ let cur = 0, tag = "all";
 const ribbon = document.getElementById("ribbon"), pick = document.getElementById("dayPick"), card = document.getElementById("dayCard");
 DAYS.forEach((day,i)=>{
   const b = document.createElement("button");
-  b.className = "night " + day.city; b.type="button";
-  b.innerHTML = `<span class="d">${day.d}</span><span class="w">${day.w}</span>`;
+  b.className = "night " + day.city + (day.d===20 ? " split" : ""); b.type="button";
+  b.innerHTML = `<span class="d">${day.d}</span><span class="w">${day.w}</span>${day.d===24?'<span class="moon" title="Optional: Full Moon Party, Koh Phangan">🌕 Full Moon</span>':''}`;
   b.setAttribute("aria-label", `${day.w} ${day.d} December, ${CITY[day.city][0]}: ${day.title}`);
   b.addEventListener("click",()=>{show(i);document.getElementById("itinerary").scrollIntoView()});
   ribbon.appendChild(b);
@@ -819,18 +951,18 @@ const PLACES = {
  ppd:{name:"Koh Phi Phi Don",c:"var(--ppd)",when:"Stop 3, Thu 24 to Sat 26 Dec, 2 nights",body:"The party island. No cars, beach bars and fire shows, plus the famous viewpoint.",facts:["Arrive: ferry from Ao Nang ~2h, morning of 24 Dec","Christmas Eve: viewpoint at golden hour, then beach parties","Christmas Day: early Maya Bay, then the Christmas night party","Smallest hotel supply on the trip, so book it first","Leave: late-morning ferry to Phuket on 26 Dec"],day:6},
  maya:{name:"Maya Bay (Phi Phi Leh)",c:"var(--ppd)",when:"Fri 25 Dec, ~07:00",body:"The bay from The Beach, plus Pileh Lagoon and Viking Cave. Going early beats the day-trip boats.",facts:["Longtail or speedboat from Phi Phi Don, booked on the island on 24 Dec","National park fee applies. No swimming in Maya Bay itself","If Christmas Eve ran late, take an afternoon or sunset tour instead"],day:7},
  rassada:{name:"Rassada pier, Phuket",c:"var(--hkt)",when:"Arrive Sat 26 Dec, early afternoon",body:"Where the Phi Phi ferry lands, in Phuket Town on the east coast.",facts:["Ferry from Phi Phi ~1.5–2h","Book a combined ticket with road transfer to Kata (~45–60 min)"],day:8},
- kata:{name:"Kata beach area, Phuket",c:"var(--hkt)",when:"Stop 4, Sat 26 to Mon 28 Dec, 2 nights",body:"Your Phuket base. A proper swimming beach with calmer nights, 20 min from Patong.",facts:["Sat: arrive, sunset swim, easy dinner","Sun: Big Buddha, Old Town, Kata Noi, sunset, Bangla Road","Mon: leave for the airport by 07:30"],day:8},
- hkt:{name:"Phuket",c:"var(--hkt)",when:"Stop 4, Sat 26 to Mon 28 Dec, 2 nights",body:"Thailand’s largest island, linked to the mainland by road bridges in the north. It’s big (about 50 km top to bottom), so it has its own airport, towns and many beaches. The finale: big beaches, Old Town, sunset capes and Bangla Road, then the flight home.",facts:["Stay: Kata or Karon, two neighbouring beach areas on the west coast","Sun: Big Buddha, Old Town, Promthep sunset, Bangla Road","Mon 28 Dec: 11:00 flight home"],day:8},
- patong:{name:"Patong and Bangla Road",c:"var(--hkt)",when:"Sun 27 Dec, night",body:"Phuket’s loudest strip of clubs and bars. The trip’s last big night.",facts:["~20 min from Kata by Grab or Bolt","Check drink prices first, and watch for bill scams and drink spiking","Agree a meeting point and a ride home, and be back by ~01:00 before the early airport run"],day:9},
- oldtown:{name:"Phuket Old Town",c:"var(--hkt)",when:"Sun 27 Dec, midday",body:"Pastel Sino-Portuguese shophouses, street art and cafés. A photographer’s favourite.",facts:["Thalang Road and Soi Romanee","Pair it with the Big Buddha on the way"],day:9},
- promthep:{name:"Promthep Cape",c:"var(--hkt)",when:"Sun 27 Dec, sunset",body:"Phuket’s classic sunset point at the island’s southern tip.",facts:["Crowded. Karon viewpoint is a calmer alternative","~15 min from Kata"],day:9},
+ kata:{name:"Kata beach area, Phuket",c:"var(--hkt)",when:"Stop 4, Sat 26 to Mon 28 Dec, 2 nights",body:"Your Phuket base. A proper swimming beach with calmer nights, 20 min from Patong.",facts:["Sat: arrive, sunset swim, easy dinner","Sun: YONA floating beach club, then Bangla Road","Mon: leave for the airport by 07:30"],day:8},
+ hkt:{name:"Phuket",c:"var(--hkt)",when:"Stop 4, Sat 26 to Mon 28 Dec, 2 nights",body:"Thailand’s largest island, linked to the mainland by road bridges in the north. It’s big (about 50 km top to bottom), so it has its own airport, towns and many beaches. The finale: big beaches, Old Town, sunset capes and Bangla Road, then the flight home.",facts:["Stay: Kata or Karon, two neighbouring beach areas on the west coast","Sun: YONA floating beach club, then Bangla Road","Mon 28 Dec: 11:00 flight home"],day:8},
+ patong:{name:"Patong and Bangla Road",c:"var(--hkt)",when:"Sun 27 Dec, night",body:"Phuket’s loudest strip of clubs and bars. The trip’s last big night.",facts:["~20 min from Kata by Grab or Bolt","Pairs well with an afternoon at YONA beach club if it’s anchored off Patong","Check drink prices first, and watch for bill scams and drink spiking","Agree a meeting point and a ride home, and be back by ~01:00 before the early airport run"],day:9},
+ oldtown:{name:"Phuket Old Town",c:"var(--hkt)",when:"Backup for Sun 27 Dec",body:"Pastel Sino-Portuguese shophouses, street art and cafés. A photographer’s favourite.",facts:["Thalang Road and Soi Romanee","Pair it with the Big Buddha on the way"],day:9},
+ promthep:{name:"Promthep Cape",c:"var(--hkt)",when:"Backup for Sun 27 Dec, sunset",body:"Phuket’s classic sunset point at the island’s southern tip.",facts:["Crowded. Karon viewpoint is a calmer alternative","~15 min from Kata"],day:9},
  hktair:{name:"Phuket airport (HKT)",c:"var(--hkt)",when:"Fly home Mon 28 Dec, 11:00",body:"In the north of the island, about 1 hour from Kata.",facts:["Leave Kata by 07:30 and be at the airport by ~08:30","Web check-in the night before","Lands in Delhi around 14:00–14:30 IST"],day:10},
  cnx:{name:"Chiang Mai",c:"var(--muted)",when:"Not on this trip",body:"Dropped for more beach time (Option 3). Adding it back would mean two internal flights, or a sleeper train plus a flight.",facts:["Great for a future trip: temples, elephants, cooler weather"],day:null},
  cri:{name:"Chiang Rai",c:"var(--muted)",when:"Not on this trip",body:"The White Temple and the Golden Triangle. It pairs best with Chiang Mai on a north-focused trip.",facts:[],day:null},
  pai:{name:"Pai",c:"var(--muted)",when:"Not on this trip",body:"A backpacker mountain town ~3 hours of winding road from Chiang Mai. It needs 2–3 days to be worth it.",facts:[],day:null},
  skt:{name:"Sukhothai",c:"var(--muted)",when:"Not on this trip",body:"An ancient capital. Ayutthaya covers similar ground as an easy day trip from Bangkok.",facts:[],day:null},
  usm:{name:"Koh Samui",c:"var(--muted)",when:"Not on this trip",body:"On the Gulf of Thailand side, where late in the year is typically the tail of the rainy season. Your Andaman route is at its driest in December.",facts:["Flights are mostly Bangkok Airways and pricey, with no direct flight to Delhi","Krabi to Samui overland is a 5–7 hour bus-and-ferry day","A better pick for a February–August trip"],day:null},
- pgn:{name:"Koh Phangan",c:"var(--muted)",when:"Not on this trip",body:"Home of the Full Moon Party on Haad Rin beach. This December it falls on Thu 24 Dec, inside your dates, but it would mean dropping Krabi and Phi Phi. Gulf-side weather is also less reliable in December, and there’s no direct flight home.",facts:[],day:null},
+ pgn:{name:"Koh Phangan",c:"var(--muted)",when:"Optional detour, 24–25 Dec",body:"Home of the Full Moon Party on Haad Rin beach, which falls on Thu 24 Dec this year. It’s doable as an overnight detour from Krabi: out on the 24th, party until dawn, then straight on to Phi Phi on the 25th to rejoin the group for Christmas night.",facts:[],day:null},
  tao:{name:"Koh Tao",c:"var(--muted)",when:"Not on this trip",body:"A diving island on the Gulf side. It’s a long way from your route and wetter in December.",facts:[],day:null}
 };
 const mapDetail = document.getElementById("mapDetail");
@@ -847,6 +979,7 @@ document.querySelectorAll("[data-place]").forEach(el=>{
   el.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); selectPlace(el.dataset.place); } });
 });
 selectPlace("bkk");
+document.querySelectorAll(".tour button[data-day]").forEach(b=>b.addEventListener("click",()=>{ show(+b.dataset.day); document.getElementById("itinerary").scrollIntoView(); }));
 
 const STAYS = [
  {city:"bkk",name:"Bangkok",nights:"18–21 Dec, 3 nights",area:"Sukhumvit, between Asok and Phrom Phong. You’re on the BTS and MRT, with rooftops and Soi 11 nightlife within walking distance."},
@@ -871,6 +1004,7 @@ const GROUPS = [
   ["Ferry Phi Phi → Phuket, 26 Dec","With a transfer to Kata/Karon"],
   ["Hong Islands tour, 23 Dec","Licensed speedboat operator"],
   ["Christmas Eve dinner table, Phi Phi","Beachfront spots fill up"],
+  ["YONA beach club day pass, Sun 27 Dec","Check its pier and Sunday hours first"],
   ["Krabi airport transfer, 21 Dec","Or take a Grab on arrival"],
   ["Kata → Phuket airport van, 07:30 Mon 28 Dec","Pre-book through the hotel"],
   ["eSIMs for all four phones","Install before flying"],
@@ -883,7 +1017,7 @@ const GROUPS = [
   ["Grab and Bolt rides","Set up the apps and cards before leaving"],
   ["Bangla Road and rooftops","Walk in; reserve only for Saturday sunset"]]}
 ];
-const KEY = "th-trip-checks-v4";
+const KEY = "th-trip-checks-v5";
 let state = {};
 try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ state = {}; }
 const groupsEl = document.getElementById("groups");
